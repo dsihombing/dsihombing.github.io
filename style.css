@@ -42,14 +42,6 @@ body {
     gap: 15px;
 }
 
-.profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--primary-color);
-}
-
 .profile-info h1 {
     font-size: 2.2rem;
     margin-bottom: 5px;
@@ -138,55 +130,52 @@ body {
     background-color: var(--primary-color);
 }
 
-/* Timeline Style */
-.timeline {
-    position: relative;
-    padding: 20px 0;
-    list-style: none;
+/* Experience & Education Grid */
+.experience-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 20px;
 }
 
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background-color: #e0e0e0;
+.experience-item {
+    background: #fff;
+    padding: 25px;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.timeline-item {
-    position: relative;
-    margin-bottom: 30px;
-    padding-left: 25px;
-    text-align: left;
+.experience-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-.timeline-date {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 0.9em;
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.job-header h3 {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.job-date {
+    font-style: italic;
+    font-size: 0.9rem;
     color: var(--text-light);
-    font-weight: bold;
     white-space: nowrap;
 }
 
-.timeline-content {
-    margin-top: 0;
-    padding: 0 10px;
-}
-
-.timeline-content h3 {
-    margin: 0 0 5px;
-    font-size: 1.2rem;
-    color: var(--primary-color);
-}
-
-.timeline-content p {
-    margin: 0;
+.job-company {
+    font-size: 1rem;
     color: var(--text-dark);
+    margin: 0;
 }
 
 /* Skills Section */
@@ -273,15 +262,12 @@ body {
         flex-direction: column;
     }
 
-    .timeline::before {
-        left: 20px;
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
-
-    .timeline-item {
-        padding-left: 50px;
-    }
-
-    .timeline-date {
-        left: 25px;
+    .job-date {
+        margin-top: 5px;
+        font-size: 0.85rem;
     }
 }
