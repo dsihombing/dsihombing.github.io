@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denny JC Sihombing - Personal Website</title>
+    <!-- Memuat Tailwind CSS untuk styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icon untuk tab browser -->
+    <link rel="icon" href="https://placehold.co/32x32/6366f1/ffffff?text=DS" type="image/png">
+    <style>
+        /* Menggunakan font Inter sebagai font utama */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Efek hover halus pada kartu dan tautan */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <a href="#" class="text-2xl font-bold text-indigo-600">Denny JC Sihombing</a>
+                <p class="text-sm text-gray-500">Lecturer in Information Systems</p>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-indigo-600 transition duration-300">About Me</a>
+                <a href="#courses" class="text-gray-600 hover:text-indigo-600 transition duration-300">Courses</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition duration-300">Contact</a>
+            </div>
+            <!-- Tombol menu mobile -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-indigo-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Menu mobile (tersembunyi secara default) -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#about" class="block py-2 text-gray-600 hover:text-indigo-600">About Me</a>
+            <a href="#courses" class="block py-2 text-gray-600 hover:text-indigo-600">Courses</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-indigo-600">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Bagian Hero / Perkenalan -->
+        <section class="text-center py-16">
+            <img src="https://placehold.co/128x128/e0e7ff/6366f1?text=DS" alt="Profile Photo" class="w-32 h-32 mx-auto rounded-full mb-6 border-4 border-white shadow-lg">
+            <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                I am a lecturer in the Information Systems Study Program at Atma Jaya Catholic University of Indonesia.
+            </p>
+        </section>
+
+        <!-- Bagian Tentang Saya -->
+        <section id="about" class="py-16 bg-white rounded-xl shadow-md p-8 md:p-12">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">About Me</h2>
+                <p class="text-gray-700 leading-relaxed text-center md:text-left">
+                    <!-- Anda bisa mengisi deskripsi singkat di sini -->
+                    With a profound passion for both technology and pedagogy, my academic focus is centered on systems analysis, digital transformation in the business sector, and the effective management of information technology projects to achieve organizational objectives. I am dedicated to mentoring students to become competent information systems professionals, fully equipped to meet the challenges of the contemporary industry.
+                </p>
+            </div>
+        </section>
+
+        <!-- Bagian Mata Kuliah -->
+        <section id="courses" class="py-20">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Courses Taught</h2>
+                <p class="text-gray-600 mb-12">The following is a list of courses I am teaching in Term 2510.</p>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Kartu Mata Kuliah 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-md hover-lift">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Decision Support Systems</h3>
+                        <p class="text-gray-600">This course explores the concepts and techniques for developing systems that facilitate managerial decision-making.</p>
+                    </div>
+
+                    <!-- Kartu Mata Kuliah 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-md hover-lift">
+                         <div class="bg-indigo-100 text-indigo-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Digital Transformation</h3>
+                        <p class="text-gray-600">A comprehensive study of how digital technology fundamentally reshapes business models and corporate operations.</p>
+                    </div>
+
+                    <!-- Kartu Mata Kuliah 3 -->
+                    <div class="bg-white p-8 rounded-xl shadow-md hover-lift">
+                         <div class="bg-indigo-100 text-indigo-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">IS Project Management</h3>
+                        <p class="text-gray-600">Focuses on the methodologies and best practices for planning, executing, and managing information systems projects.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Bagian Kontak -->
+        <section id="contact" class="py-16 bg-white rounded-xl shadow-md p-8 md:p-12">
+            <div class="max-w-xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Contact Information</h2>
+                <p class="text-gray-600 mb-8">
+                    For academic inquiries, please feel free to contact me via email or visit me during office hours.
+                </p>
+                <div class="bg-indigo-50 p-6 rounded-lg inline-block">
+                    <p class="text-lg font-medium text-indigo-800">
+                        <!-- Ganti dengan alamat email Anda -->
+                        djc.sihombing@gmail.com
+                    </p>
+                </div>
+                 <p class="text-gray-500 mt-6">
+                    Information Systems Study Program<br>
+                    Atma Jaya Catholic University of Indonesia
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; <span id="current-year"></span> Denny JC Sihombing. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script untuk menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Navigate to section smoothly
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                mobileMenu.classList.add('hidden'); // Close mobile menu on click
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Script untuk menampilkan tahun saat ini di footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
+
