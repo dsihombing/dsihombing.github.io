@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Support Systems - Denny JC Sihombing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://placehold.co/32x32/dd6b20/ffffff?text=DS" type="image/png">
+    <style> body { font-family: 'Inter', sans-serif; } </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <a href="index.html" class="text-2xl font-bold text-orange-600">Denny JC Sihombing</a>
+                <p class="text-sm text-gray-500">Lecturer in Information Systems</p>
+            </div>
+             <div>
+                <a href="index.html#courses" class="text-gray-600 hover:text-blue-600 transition duration-300">&larr; Back to Courses</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Judul Mata Kuliah -->
+            <section class="mb-12">
+                <h1 class="text-4xl font-bold text-gray-900">Decision Support Systems</h1>
+                <p class="mt-2 text-lg text-gray-600">Equipping students with the theory and application of systems that aid in organizational decision-making.</p>
+            </section>
+
+            <!-- Deskripsi Detail -->
+            <section class="bg-white rounded-xl shadow-md p-8 md:p-10 mb-8">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Course Description</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    This course explores the fundamental concepts, methodologies, and technologies utilized in building and deploying Decision Support Systems (DSS). Students will learn how organizations leverage data-driven approaches to enhance strategic and tactical decision-making. The curriculum covers key components of DSS, including data warehousing, business intelligence (BI), online analytical processing (OLAP), and data mining. Emphasis is placed on practical application, enabling students to design and conceptualize DSS solutions for real-world business problems.
+                </p>
+            </section>
+
+            <!-- Learning Objectives -->
+            <section class="bg-white rounded-xl shadow-md p-8 md:p-10 mb-8">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Learning Objectives</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Understand the architecture and components of a Decision Support System.</li>
+                    <li>Analyze business requirements to design effective DSS solutions.</li>
+                    <li>Apply data warehousing and business intelligence concepts to support analytics.</li>
+                    <li>Evaluate and select appropriate data mining techniques for knowledge discovery.</li>
+                    <li>Develop a conceptual prototype of a DSS for a given business case.</li>
+                    <li>Critically assess the ethical implications of data-driven decision-making.</li>
+                </ul>
+            </section>
+
+            <!-- Key Topics -->
+            <section class="bg-white rounded-xl shadow-md p-8 md:p-10">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Key Topics Covered</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Introduction to Managerial Decision Making and BI</li>
+                    <li>Data Warehousing: Architecture and Implementation</li>
+                    <li>Business Performance Management (BPM)</li>
+                    <li>Data Mining for Business Analytics</li>
+                    <li>Predictive Modeling and Text Mining</li>
+                    <li>Big Data Analytics and Future Trends in DSS</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; <span id="current-year"></span> Denny JC Sihombing. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
