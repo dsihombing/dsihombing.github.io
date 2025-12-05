@@ -1,297 +1,230 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Denny JC Sihombing - Personal Website</title>
+    <title>Denny JC Sihombing - Lecturer & Researcher</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter + Space Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
-    <link
-        rel="icon"
-        href="https://placehold.co/32x32/dd6b20/ffffff?text=DS"
-        type="image/png"
-    >
+    <link rel="icon" href="https://placehold.co/32x32/f97316/ffffff?text=DS" type="image/png">
 
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        body { 
+            font-family: 'Inter', sans-serif; 
         }
-        .hover-lift:hover {
-            transform: translateY(-5px);
-            box-shadow:
-                0 10px 15px -3px rgba(0, 0, 0, 0.1),
-                0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        h1, h2, h3 { 
+            font-family: 'Space Grotesk', sans-serif; 
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f97316;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.4);
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div>
-                <a href="#" class="text-2xl font-bold text-orange-600">
-                    Denny JC Sihombing
-                </a>
-                <p class="text-sm text-gray-500">
-                    Lecturer in Information Systems
-                </p>
+    <!-- Header - Minimal & Fixed -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
+        <nav class="container mx-auto px-6 lg:px-8 py-5">
+            <div class="flex justify-between items-center">
+                <!-- Logo/Name -->
+                <div>
+                    <a href="#" class="text-xl lg:text-2xl font-bold gradient-text">
+                        Denny Sihombing
+                    </a>
+                    <p class="text-xs text-gray-500 mt-0.5">Information Systems · Atma Jaya</p>
+                </div>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link text-sm text-gray-600 hover:text-orange-600">About</a>
+                    <a href="#courses" class="nav-link text-sm text-gray-600 hover:text-orange-600">Teaching</a>
+                    <a href="https://github.com/dsihombing/dsihombing.github.io/wiki" target="_blank" class="nav-link text-sm text-gray-600 hover:text-orange-600">Wiki</a>
+                    <a href="https://dsihombing.github.io/decisionlab" target="_blank" class="btn-primary text-white px-4 py-2 rounded-lg text-sm font-medium">
+                        Decision Lab →
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-orange-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
             </div>
 
-            <!-- Desktop nav -->
-            <div class="hidden md:flex space-x-6">
-                <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300">
-                    About Me
-                </a>
-                <a href="#courses" class="text-gray-600 hover:text-blue-600 transition duration-300">
-                    Courses
-                </a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition duration-300">
-                    Contact
-                </a>
-                <a
-                    href="https://github.com/dsihombing/dsihombing.github.io/wiki"
-                    target="_blank"
-                    class="text-gray-600 hover:text-blue-600 transition duration-300 font-semibold"
-                >
-                    Wiki
-                </a>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-2 space-y-2">
+                <a href="#about" class="block py-2 text-sm text-gray-600 hover:text-orange-600">About</a>
+                <a href="#courses" class="block py-2 text-sm text-gray-600 hover:text-orange-600">Teaching</a>
+                <a href="https://github.com/dsihombing/dsihombing.github.io/wiki" target="_blank" class="block py-2 text-sm text-gray-600 hover:text-orange-600">Wiki</a>
+                <a href="https://dsihombing.github.io/decisionlab" target="_blank" class="block py-2 text-sm text-orange-600 font-medium">Decision Lab →</a>
             </div>
-
-            <!-- Mobile menu button -->
-            <button
-                id="mobile-menu-button"
-                class="md:hidden text-gray-600 hover:text-orange-600 focus:outline-none"
-                aria-label="Toggle navigation"
-            >
-                <svg class="w-6 h-6" fill="none" stroke="currentColor"
-                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
         </nav>
-
-        <!-- Mobile nav -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#about" class="block py-2 text-gray-600 hover:text-blue-600">
-                About Me
-            </a>
-            <a href="#courses" class="block py-2 text-gray-600 hover:text-blue-600">
-                Courses
-            </a>
-            <a href="#contact" class="block py-2 text-gray-600 hover:text-blue-600">
-                Contact
-            </a>
-            <a
-                href="https://github.com/dsihombing/dsihombing.github.io/wiki"
-                target="_blank"
-                class="block py-2 text-gray-600 hover:text-blue-600 font-semibold"
-            >
-                Wiki
-            </a>
-        </div>
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-6 py-12">
+    <main class="container mx-auto px-6 lg:px-8">
 
-        <!-- Hero -->
-        <section class="text-center py-16">
-            <img
-                src="denny.png"
-                alt="Profile Photo"
-                class="w-32 h-32 mx-auto rounded-full mb-6 border-4 border-white shadow-lg object-cover"
-                onerror="this.onerror=null;this.src='https://placehold.co/128x128/e2e8f0/4a5568?text=DS';"
-            >
-            <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                I am a lecturer in the Information Systems Study Program at
-                Atma Jaya Catholic University of Indonesia.
-            </p>
-        </section>
-
-        <!-- About -->
-        <section id="about" class="py-16 bg-white rounded-xl shadow-md p-8 md:p-12">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
-                    About Me
-                </h2>
-                <p class="text-gray-700 leading-relaxed text-center md:text-left">
-                    With a profound passion for both technology and pedagogy, my academic focus is
-                    centered on systems analysis, digital transformation in the business sector, and the
-                    effective management of information technology projects to achieve organizational
-                    objectives. I am dedicated to mentoring students to become competent information
-                    systems professionals, fully equipped to meet the challenges of the contemporary industry.
-                </p>
-            </div>
-        </section>
-
-        <!-- Courses -->
-        <section id="courses" class="py-20">
-            <div class="max-w-5xl mx-auto text-center">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">
-                    Courses Taught
-                </h2>
-                <p class="text-gray-600 mb-12">
-                    The following is a list of courses I am teaching.
+        <!-- Hero Section - Minimalist -->
+        <section class="py-16 lg:py-24">
+            <div class="max-w-4xl mx-auto text-center">
+                <img 
+                    src="denny.png" 
+                    alt="Denny Sihombing" 
+                    class="w-28 h-28 lg:w-32 lg:h-32 mx-auto rounded-full mb-6 border-4 border-white shadow-xl object-cover"
+                    onerror="this.onerror=null;this.src='https://placehold.co/128x128/f3f4f6/6b7280?text=DS';"
+                >
+                <h1 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                    Lecturer in <span class="gradient-text">Information Systems</span>
+                </h1>
+                <p class="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Passionate about decision support systems, data science, and digital transformation. 
+                    Mentoring students to become future-ready IS professionals.
                 </p>
 
-                <div id="courses-container" class="grid md:grid-cols-2 gap-8">
-                    <!-- Cards injected by JavaScript -->
+                <!-- CTA Decision Lab Prominent -->
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="https://dsihombing.github.io/decisionlab" target="_blank" 
+                       class="btn-primary text-white px-8 py-3.5 rounded-xl font-semibold inline-flex items-center gap-2 shadow-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                        Explore Decision Lab
+                    </a>
+                    <a href="#contact" class="border-2 border-gray-300 text-gray-700 px-8 py-3.5 rounded-xl font-semibold hover:border-orange-600 hover:text-orange-600 transition-colors">
+                        Get in Touch
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Contact -->
-        <section id="contact" class="py-16 bg-white rounded-xl shadow-md p-8 md:p-12">
-            <div class="max-w-xl mx-auto text-center">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">
-                    Contact Information
-                </h2>
-                <p class="text-gray-600 mb-8">
-                    For academic inquiries, please feel free to contact me via email or visit me during office hours.
-                </p>
-                <div class="bg-blue-50 p-6 rounded-lg inline-block">
-                    <p class="text-lg font-medium text-blue-800">
-                        <a href="mailto:djc.sihombing@gmail.com" class="underline">
-                            djc.sihombing@gmail.com
-                        </a>
+        <!-- About Section - Card Style -->
+        <section id="about" class="py-12 lg:py-16">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-sm p-8 lg:p-12 border border-gray-100">
+                    <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">About Me</h2>
+                    <p class="text-gray-700 leading-relaxed text-base lg:text-lg">
+                        With a profound passion for both technology and pedagogy, my academic focus is centered on 
+                        <strong>systems analysis</strong>, <strong>digital transformation</strong> in the business sector, 
+                        and the effective management of information technology projects to achieve organizational objectives.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed text-base lg:text-lg mt-4">
+                        I am dedicated to mentoring students to become competent information systems professionals, 
+                        fully equipped to meet the challenges of the contemporary industry.
+                    </p>
+
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-10 pt-8 border-t border-gray-100">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold gradient-text">10+</div>
+                            <div class="text-sm text-gray-500 mt-1">Years Teaching</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold gradient-text">2</div>
+                            <div class="text-sm text-gray-500 mt-1">Core Courses</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold gradient-text">100+</div>
+                            <div class="text-sm text-gray-500 mt-1">Students</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold gradient-text">1</div>
+                            <div class="text-sm text-gray-500 mt-1">Decision Lab</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section - Grid -->
+        <section id="courses" class="py-12 lg:py-16">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">Courses Taught</h2>
+                    <p class="text-gray-600">Empowering students with practical knowledge and analytical skills</p>
+                </div>
+
+                <div id="courses-container" class="grid md:grid-cols-2 gap-6 lg:gap-8">
+                    <!-- Course cards injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section - Minimal -->
+        <section id="contact" class="py-12 lg:py-16">
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100/50 rounded-2xl p-8 lg:p-10 text-center border border-orange-200">
+                    <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">Let's Connect</h2>
+                    <p class="text-gray-600 mb-6">
+                        For academic inquiries, collaborations, or questions about courses.
+                    </p>
+                    <a href="mailto:djc.sihombing@gmail.com" 
+                       class="inline-flex items-center gap-2 text-lg font-semibold text-orange-600 hover:text-orange-700 mb-4">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        djc.sihombing@gmail.com
+                    </a>
+                    <p class="text-sm text-gray-500 mt-6">
+                        Information Systems Study Program<br>
+                        Atma Jaya Catholic University of Indonesia
                     </p>
                 </div>
-                <p class="text-gray-500 mt-6">
-                    Information Systems Study Program<br>
-                    Atma Jaya Catholic University of Indonesia
-                </p>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white">
-        <div class="container mx-auto px-6 py-8 text-center">
-            <p>&copy; <span id="current-year"></span> Denny JC Sihombing. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Smooth scroll for internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const targetId = this.getAttribute('href');
-                if (!targetId || targetId === '#') return;
-
-                e.preventDefault();
-
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-
-                const target = document.querySelector(targetId);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        // Current year in footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Courses data (static)
-        const coursesData = [
-            {
-                title: 'Decision Support Systems',
-                description: 'This course explores concepts, methodologies, and technologies used to build systems that assist in decision-making processes. Topics include data warehousing, business intelligence, data mining, and modeling techniques to support strategic and tactical business decisions.',
-                icon: 'decision',
-                iconColor: 'orange'
-            },
-            {
-                title: 'Information Systems Project Management',
-                description: 'This course provides a comprehensive overview of principles and practices for managing information systems projects. It covers the entire project lifecycle, from initiation and planning to execution, monitoring, and closure, emphasizing methodologies like Agile and Waterfall, risk management, and stakeholder communication.',
-                icon: 'project',
-                iconColor: 'blue'
-            }
-        ];
-
-        // SVG icons
-        const icons = {
-            decision: `
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8"
-                     fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2
-                          0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0
-                          012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2
-                          2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2
-                          0 01-2-2z" />
-                </svg>
-            `,
-            project: `
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8"
-                     fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2
-                          0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2
-                          2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3
-                          7h3m-3 4h3m-6-4h.01M9 16h.01" />
-                </svg>
-            `
-        };
-
-        function renderCourses() {
-            const coursesContainer = document.getElementById('courses-container');
-
-            if (!coursesContainer) return;
-
-            if (coursesData.length > 0) {
-                coursesContainer.innerHTML = '';
-                coursesData.forEach(course => {
-                    const bgColor = course.iconColor === 'blue' ? 'bg-blue-100' : 'bg-orange-100';
-                    const textColor = course.iconColor === 'blue' ? 'text-blue-600' : 'text-orange-600';
-                    const iconSvg = icons[course.icon] || '';
-
-                    const courseCard = `
-                        <div class="bg-white p-8 rounded-xl shadow-md hover-lift text-left">
-                            <div class="${bgColor} ${textColor} rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                                ${iconSvg}
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                ${course.title}
-                            </h3>
-                            <p class="text-gray-600">
-                                ${course.description}
-                            </p>
-                        </div>
-                    `;
-                    coursesContainer.insertAdjacentHTML('beforeend', courseCard);
-                });
-            } else {
-                coursesContainer.innerHTML =
-                    '<p class="text-gray-500 col-span-2">No courses available at the moment.</p>';
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', renderCourses);
-    </script>
-
-</body>
-</html>
+    <!-- Footer - Minimal -->
+    <footer class="bg-white border-t border-gray-100 mt-16">
+        <div class="container mx-auto px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-500">
+                    &copy; <span id="current-year"></span> Denny JC Sihombing. All rights reserved.
+                </p>
+                <div class="flex gap-6">
+                    <a href="https://github.com/dsihombing" target="_blank" class="text-gray-400 hover:text-orange-600 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0
