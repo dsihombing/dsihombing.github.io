@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Wiki - Denny Sihombing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #ff6b35;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .search-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .wiki-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .wiki-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .wiki-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .wiki-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .wiki-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .wiki-card ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .wiki-card ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .wiki-card ul li a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .wiki-card ul li a:hover {
+            color: #667eea;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin: 0.2rem;
+            color: #666;
+        }
+        
+        .tag-container {
+            margin-top: 1rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            background: white;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .wiki-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">Denny Sihombing</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#research">Research</a></li>
+                <li><a href="/wiki/">Wiki</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h1>📚 Personal Knowledge Base</h1>
+            <p>Curated notes, explanations, and references for information systems, analytics, and decision support methods</p>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 Search topics, methods, or concepts..." onkeyup="searchWiki()">
+        </div>
+
+        <div class="wiki-grid">
+            <div class="wiki-card">
+                <h3>🎯 Decision Support Systems</h3>
+                <ul>
+                    <li><a href="#ahp">Analytic Hierarchy Process (AHP)</a></li>
+                    <li><a href="#topsis">TOPSIS Method</a></li>
+                    <li><a href="#saw">Simple Additive Weighting (SAW)</a></li>
+                    <li><a href="#electre">ELECTRE Method</a></li>
+                    <li><a href="#promethee">PROMETHEE Method</a></li>
+                </ul>
+                <div class="tag-container">
+                    <span class="tag">MCDM</span>
+                    <span class="tag">Decision Making</span>
+                </div>
+            </div>
+
+            <div class="wiki-card">
+                <h3>💻 Information Systems</h3>
+                <ul>
+                    <li><a href="#system-analysis">System Analysis & Design</a></li>
+                    <li><a href="#database">Database Management</a></li>
+                    <li><a href="#erp">Enterprise Resource Planning</a></li>
+                    <li><a href="#crm">Customer Relationship Management</a></li>
+                    <li><a href="#scm">Supply Chain Management</a></li>
+                </ul>
+                <div class="tag-container">
+                    <span class="tag">Systems</span>
+                    <span class="tag">Business</span>
+                </div>
+            </div>
+
+            <div class="wiki-card">
+                <h3>📊 Data Analytics</h3>
+                <ul>
+                    <li><a href="#statistics">Statistical Analysis</a></li>
+                    <li><a href="#machine-learning">Machine Learning Basics</a></li>
+                    <li><a href="#data-mining">Data Mining Techniques</a></li>
+                    <li><a href="#visualization">Data Visualization</a></li>
+                    <li><a href="#bi">Business Intelligence</a></li>
+                </ul>
+                <div class="tag-container">
+                    <span class="tag">Analytics</span>
+                    <span class="tag">Data Science</span>
+                </div>
+            </div>
+
+            <div class="wiki-card">
+                <h3>🔬 Research Methods</h3>
+                <ul>
+                    <li><a href="#research-design">Research Design</a></li>
+                    <li><a href="#sampling">Sampling Techniques</a></li>
+                    <li><a href="#questionnaire">Questionnaire Development</a></li>
+                    <li><a href="#validity">Validity & Reliability</a></li>
+                    <li><a href="#sem">Structural Equation Modeling</a></li>
+                </ul>
+                <div class="tag-container">
+                    <span class="tag">Research</span>
+                    <span class="tag">Methodology</span>
+                </div>
+            </div>
+
+            <div class="wiki-card">
+                <h3>🚀 Digital Transformation</h3>
+                <ul>
+                    <li><a href="#digital-strategy">Digital Strategy</a></li>
+                    <li><a href="#cloud">Cloud Computing</a></li>
+                    <li><a href="#iot">Internet of Things</a></li>
+                    <li><a href="#ai">Artificial Intelligence</a></li>
+                    <li><a href="#blockchain">Blockchain Technology</a></li>
+                </ul>
+                <div class="tag-container">
+                    <span class="tag">Innovation</span>
+                    <span class="tag">Technology</span>
+                </div>
+            </div>
+
+            <div class="wiki-card">
+                <h3>📖 Learning Resources</h3>
+                <ul>
+                    <li><a href="#tutorials">Step-by-Step Tutorials</a></li>
+                    <li><a href="#case-studies">Case Studies</a></li>
+                    <li><a href="#templates">Templates & Tools</a></li>
+                    <li><a href="#references">Reference Materials</a></li>
+                    <li><a href="#videos">Video Lectures</a></li>
+                </ul>
+                <div class="tag-container">
+                    <span class="tag">Education</span>
+                    <span class="tag">Resources</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Denny Sihombing. Personal Knowledge Base for Information Systems & Decision Support.</p>
+    </footer>
+
+    <script>
+        function searchWiki() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toUpperCase();
+            const cards = document.getElementsByClassName('wiki-card');
+            
+            for (let i = 0; i < cards.length; i++) {
+                const card = cards[i];
+                const textContent = card.textContent || card.innerText;
+                
+                if (textContent.toUpperCase().indexOf(filter) > -1) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
