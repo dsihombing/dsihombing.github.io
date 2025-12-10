@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Support Systems - Denny Sihombing</title>
+    <meta name="description" content="Learn Decision Support Systems, AHP, TOPSIS, SAW and multi-criteria decision making methods with practical applications.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--dark); line-height: 1.7; background: #fff; }
+        :root {
+            --orange: #ff6b35;
+            --orange-hover: #e55a2b;
+            --orange-light: #fff5f2;
+            --dark: #1a202c;
+            --gray: #4a5568;
+            --light-gray: #f7f8f9;
+            --border: #e2e8f0;
+        }
+        nav { background: white; padding: 1.5rem 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.25rem; font-weight: 700; color: var(--dark); text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--dark); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--orange); }
+        .breadcrumb { max-width: 1200px; margin: 2rem auto 0; padding: 0 2rem; font-size: 0.95rem; color: var(--gray); }
+        .breadcrumb a { color: var(--orange); text-decoration: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem 2rem 4rem; }
+        .header { margin-bottom: 3rem; }
+        .header h1 { font-size: 2.5rem; font-weight: 700; color: var(--dark); margin-bottom: 1rem; }
+        .header .subtitle { font-size: 1.25rem; color: var(--gray); margin-bottom: 2rem; }
+        .meta-info { display: flex; gap: 2rem; flex-wrap: wrap; }
+        .meta-item { display: flex; align-items: center; gap: 0.5rem; color: var(--gray); }
+        .section { margin: 3rem 0; }
+        .section h2 { font-size: 1.75rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--dark); }
+        .section p { color: var(--gray); margin-bottom: 1rem; }
+        .topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .topic-card { background: var(--light-gray); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--orange); }
+        .topic-card h3 { font-size: 1.1rem; color: var(--dark); margin-bottom: 0.75rem; }
+        .topic-card p { font-size: 0.95rem; color: var(--gray); }
+        .tools-section { background: var(--orange-light); padding: 2rem; border-radius: 12px; margin: 2rem 0; }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+        .tool-item { background: white; padding: 1.25rem; border-radius: 8px; text-align: center; }
+        .tool-item .icon { font-size: 2rem; margin-bottom: 0.75rem; }
+        .tool-item h4 { font-size: 1rem; color: var(--dark); margin-bottom: 0.5rem; }
+        .tool-item p { font-size: 0.875rem; color: var(--gray); }
+        .cta-section { background: var(--dark); color: white; padding: 3rem; border-radius: 16px; text-align: center; margin: 3rem 0; }
+        .cta-section h2 { color: white; margin-bottom: 1rem; }
+        .cta-section p { color: #e2e8f0; margin-bottom: 2rem; }
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 0.875rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s; display: inline-block; }
+        .btn-primary { background: var(--orange); color: white; }
+        .btn-primary:hover { background: var(--orange-hover); }
+        .btn-secondary { background: white; color: var(--dark); }
+        .btn-secondary:hover { background: var(--light-gray); }
+        .learning-outcomes { background: white; border: 2px solid var(--border); border-radius: 12px; padding: 2rem; }
+        .learning-outcomes ul { list-style: none; }
+        .learning-outcomes li { padding: 0.75rem 0; padding-left: 2rem; position: relative; }
+        .learning-outcomes li::before { content: '✓'; position: absolute; left: 0; color: var(--orange); font-weight: bold; font-size: 1.25rem; }
+        footer { background: var(--light-gray); padding: 2rem; text-align: center; color: var(--gray); margin-top: 4rem; }
+        @media (max-width: 768px) { .header h1 { font-size: 2rem; } .topics-grid, .tools-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">Denny Sihombing</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/teaching/" class="active">Teaching</a></li>
+                <li><a href="/research/">Research</a></li>
+                <li><a href="/resources/">Resources</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a> / <a href="/teaching/">Teaching</a> / Decision Support Systems
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Decision Support Systems</h1>
+            <p class="subtitle">Build intelligent systems that support complex decision-making using multi-criteria methods</p>
+            <div class="meta-info">
+                <div class="meta-item">
+                    <span>📚</span> <span>3 SKS</span>
+                </div>
+                <div class="meta-item">
+                    <span>⏰</span> <span>14 Weeks</span>
+                </div>
+                <div class="meta-item">
+                    <span>🎯</span> <span>Hands-on Projects</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Course Overview</h2>
+            <p>This course provides comprehensive understanding of Decision Support Systems (DSS) and Multi-Criteria Decision Making (MCDM) methods. Students will learn to analyze complex problems, model decision scenarios, and implement various MCDM techniques including AHP, TOPSIS, SAW, and WP.</p>
+            <p>Through practical exercises and real-world case studies, students will develop the ability to design and implement decision support systems for various domains including business, healthcare, education, and public policy.</p>
+        </div>
+
+        <div class="section">
+            <h2>Learning Outcomes</h2>
+            <div class="learning-outcomes">
+                <ul>
+                    <li>Understand fundamental concepts of Decision Support Systems and their applications</li>
+                    <li>Master multiple MCDM methods: AHP, TOPSIS, SAW, WP, ELECTRE, and PROMETHEE</li>
+                    <li>Analyze decision problems and identify appropriate criteria and alternatives</li>
+                    <li>Implement DSS using Python, Excel, and specialized software</li>
+                    <li>Evaluate and validate decision models with sensitivity analysis</li>
+                    <li>Apply DSS methodologies to real-world business and organizational problems</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Course Topics</h2>
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <h3>Week 1-2: DSS Fundamentals</h3>
+                    <p>Introduction to DSS, decision-making processes, types of decisions, and DSS architecture</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Week 3-4: Analytic Hierarchy Process</h3>
+                    <p>AHP methodology, pairwise comparison, consistency ratio, and priority calculation</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Week 5-6: TOPSIS Method</h3>
+                    <p>Technique for Order Preference by Similarity to Ideal Solution with normalization techniques</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Week 7-8: SAW & Weighted Methods</h3>
+                    <p>Simple Additive Weighting and other weighted aggregation approaches</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Week 9-10: Advanced MCDM</h3>
+                    <p>ELECTRE, PROMETHEE, and hybrid decision-making methods</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Week 11-12: Implementation</h3>
+                    <p>Building DSS applications with Python, web-based DSS, and system integration</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Week 13: Validation & Analysis</h3>
+                    <p>Sensitivity analysis, robustness testing, and result interpretation</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Week 14: Final Project</h3>
+                    <p>Comprehensive DSS project presentation and evaluation</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tools-section">
+            <h2>Tools & Technologies</h2>
+            <div class="tools-grid">
+                <div class="tool-item">
+                    <div class="icon">🐍</div>
+                    <h4>Python</h4>
+                    <p>NumPy, Pandas for DSS implementation</p>
+                </div>
+                <div class="tool-item">
+                    <div class="icon">📊</div>
+                    <h4>Excel</h4>
+                    <p>Quick prototyping & calculations</p>
+                </div>
+                <div class="tool-item">
+                    <div class="icon">🧪</div>
+                    <h4>Decision Lab</h4>
+                    <p>Interactive MCDM platform</p>
+                </div>
+                <div class="tool-item">
+                    <div class="icon">💻</div>
+                    <h4>Jupyter Notebook</h4>
+                    <p>Documentation & analysis</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Assessment</h2>
+            <p><strong>Assignments (30%):</strong> Weekly exercises on different MCDM methods</p>
+            <p><strong>Midterm Exam (25%):</strong> Theory and problem-solving on AHP, TOPSIS, SAW</p>
+            <p><strong>Final Project (35%):</strong> Complete DSS implementation for a real-world problem</p>
+            <p><strong>Participation (10%):</strong> Class discussions and peer reviews</p>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Learn DSS?</h2>
+            <p>Access course materials, examples, and interactive tools to master decision support systems</p>
+            <div class="cta-buttons">
+                <a href="https://dsihombing.github.io/decisionlab/" target="_blank" class="btn btn-primary">Launch Decision Lab</a>
+                <a href="/wiki/" class="btn btn-secondary">View Course Wiki</a>
+                <a href="/resources/" class="btn btn-secondary">Download Materials</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Denny Sihombing. All rights reserved.</p>
+    </footer>
+</body>
+</html>
