@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching - Denny Sihombing</title>
+    <meta name="description" content="Courses taught by Denny Sihombing: Decision Support Systems, Machine Learning, and Digital Transformation at Atma Jaya Catholic University.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--dark);
+            line-height: 1.7;
+            background: #fff;
+        }
+
+        :root {
+            --orange: #ff6b35;
+            --orange-hover: #e55a2b;
+            --orange-light: #fff5f2;
+            --dark: #1a202c;
+            --gray: #4a5568;
+            --light-gray: #f7f8f9;
+            --border: #e2e8f0;
+        }
+
+        nav {
+            background: white;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--orange);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 3rem;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .course-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .course-card:hover {
+            border-color: var(--orange);
+            box-shadow: 0 8px 24px rgba(255, 107, 53, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .course-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--orange-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .course-card h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .course-card p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .tools-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tool-tag {
+            background: var(--light-gray);
+            padding: 0.375rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .course-link {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--orange);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .course-link:hover {
+            background: var(--orange-hover);
+        }
+
+        .section {
+            margin: 4rem 0;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .resource-card {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .resource-card h3 {
+            font-size: 1.25rem;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .resource-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .resource-link {
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .resource-link:hover {
+            color: var(--orange-hover);
+        }
+
+        footer {
+            background: var(--light-gray);
+            padding: 2rem;
+            text-align: center;
+            color: var(--gray);
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">Denny Sihombing</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/teaching/" class="active">Teaching</a></li>
+                <li><a href="/research/">Research</a></li>
+                <li><a href="/resources/">Resources</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Teaching</h1>
+        <p class="subtitle">Courses focused on decision-making systems, intelligent computing, and digital innovation</p>
+
+        <div class="courses-grid">
+            <!-- Decision Support Systems -->
+            <div class="course-card">
+                <div class="course-icon">🎯</div>
+                <h3>Decision Support Systems</h3>
+                <p>Learn how to build intelligent systems that support complex decision-making processes using multi-criteria methods like AHP, TOPSIS, and SAW.</p>
+                
+                <div class="tools-list">
+                    <span class="tool-tag">Python</span>
+                    <span class="tool-tag">Excel</span>
+                    <span class="tool-tag">AHP</span>
+                    <span class="tool-tag">TOPSIS</span>
+                    <span class="tool-tag">SAW</span>
+                </div>
+                
+                <a href="/teaching/decision-support-systems.html" class="course-link">View Course Details</a>
+            </div>
+
+            <!-- Machine Learning -->
+            <div class="course-card">
+                <div class="course-icon">🤖</div>
+                <h3>Machine Learning</h3>
+                <p>Explore supervised and unsupervised learning algorithms, from regression to neural networks, with hands-on projects and real-world applications.</p>
+                
+                <div class="tools-list">
+                    <span class="tool-tag">Python</span>
+                    <span class="tool-tag">Scikit-learn</span>
+                    <span class="tool-tag">TensorFlow</span>
+                    <span class="tool-tag">Pandas</span>
+                    <span class="tool-tag">NumPy</span>
+                </div>
+                
+                <a href="/teaching/machine-learning.html" class="course-link">View Course Details</a>
+            </div>
+
+            <!-- Digital Transformation -->
+            <div class="course-card">
+                <div class="course-icon">🚀</div>
+                <h3>Digital Transformation</h3>
+                <p>Understand how organizations leverage technology to transform business processes, culture, and customer experiences in the digital age.</p>
+                
+                <div class="tools-list">
+                    <span class="tool-tag">Case Studies</span>
+                    <span class="tool-tag">Strategy</span>
+                    <span class="tool-tag">Analytics</span>
+                    <span class="tool-tag">Innovation</span>
+                </div>
+                
+                <a href="/teaching/digital-transformation.html" class="course-link">View Course Details</a>
+            </div>
+        </div>
+
+        <!-- For Students Section -->
+        <div class="section">
+            <h2>For Students</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>📝 Thesis Guidance</h3>
+                    <p>Explore potential thesis topics in DSS, MCDM, Machine Learning, and Digital Transformation</p>
+                    <a href="/resources/" class="resource-link">View Topics →</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>📚 Learning Wiki</h3>
+                    <p>Access structured notes, examples, and tutorials for all courses</p>
+                    <a href="/wiki/" class="resource-link">Open Wiki →</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>🧪 Decision Lab</h3>
+                    <p>Interactive platform for practicing MCDM methods with step-by-step examples</p>
+                    <a href="https://dsihombing.github.io/decisionlab/" target="_blank" class="resource-link">Launch Lab →</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>📦 Templates & Tools</h3>
+                    <p>Download Excel templates, Python scripts, and project guidelines</p>
+                    <a href="/resources/" class="resource-link">Download →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Denny Sihombing. All rights reserved.</p>
+    </footer>
+</body>
+</html>
