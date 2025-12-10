@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning - Denny Sihombing</title>
+    <meta name="description" content="Master machine learning algorithms from regression to neural networks with hands-on Python projects and real-world applications.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--dark); line-height: 1.7; background: #fff; }
+        :root { --orange: #ff6b35; --orange-hover: #e55a2b; --orange-light: #fff5f2; --dark: #1a202c; --gray: #4a5568; --light-gray: #f7f8f9; --border: #e2e8f0; }
+        nav { background: white; padding: 1.5rem 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.25rem; font-weight: 700; color: var(--dark); text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--dark); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--orange); }
+        .breadcrumb { max-width: 1200px; margin: 2rem auto 0; padding: 0 2rem; font-size: 0.95rem; color: var(--gray); }
+        .breadcrumb a { color: var(--orange); text-decoration: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem 2rem 4rem; }
+        .header { margin-bottom: 3rem; }
+        .header h1 { font-size: 2.5rem; font-weight: 700; color: var(--dark); margin-bottom: 1rem; }
+        .header .subtitle { font-size: 1.25rem; color: var(--gray); margin-bottom: 2rem; }
+        .meta-info { display: flex; gap: 2rem; flex-wrap: wrap; }
+        .meta-item { display: flex; align-items: center; gap: 0.5rem; color: var(--gray); }
+        .section { margin: 3rem 0; }
+        .section h2 { font-size: 1.75rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--dark); }
+        .section p { color: var(--gray); margin-bottom: 1rem; }
+        .topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .topic-card { background: var(--light-gray); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--orange); }
+        .topic-card h3 { font-size: 1.1rem; color: var(--dark); margin-bottom: 0.75rem; }
+        .topic-card p { font-size: 0.95rem; color: var(--gray); }
+        .tools-section { background: var(--orange-light); padding: 2rem; border-radius: 12px; margin: 2rem 0; }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+        .tool-item { background: white; padding: 1.25rem; border-radius: 8px; text-align: center; }
+        .tool-item .icon { font-size: 2rem; margin-bottom: 0.75rem; }
+        .tool-item h4 { font-size: 1rem; color: var(--dark); margin-bottom: 0.5rem; }
+        .tool-item p { font-size: 0.875rem; color: var(--gray); }
+        .cta-section { background: var(--dark); color: white; padding: 3rem; border-radius: 16px; text-align: center; margin: 3rem 0; }
+        .cta-section h2 { color: white; margin-bottom: 1rem; }
+        .cta-section p { color: #e2e8f0; margin-bottom: 2rem; }
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 0.875rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s; display: inline-block; }
+        .btn-primary { background: var(--orange); color: white; }
+        .btn-primary:hover { background: var(--orange-hover); }
+        .btn-secondary { background: white; color: var(--dark); }
+        .btn-secondary:hover { background: var(--light-gray); }
+        .learning-outcomes { background: white; border: 2px solid var(--border); border-radius: 12px; padding: 2rem; }
+        .learning-outcomes ul { list-style: none; }
+        .learning-outcomes li { padding: 0.75rem 0; padding-left: 2rem; position: relative; }
+        .learning-outcomes li::before { content: '✓'; position: absolute; left: 0; color: var(--orange); font-weight: bold; font-size: 1.25rem; }
+        footer { background: var(--light-gray); padding: 2rem; text-align: center; color: var(--gray); margin-top: 4rem; }
+        @media (max-width: 768px) { .header h1 { font-size: 2rem; } .topics-grid, .tools-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">Denny Sihombing</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/teaching/" class="active">Teaching</a></li>
+                <li><a href="/research/">Research</a></li>
+                <li><a href="/resources/">Resources</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="breadcrumb"><a href="/">Home</a> / <a href="/teaching/">Teaching</a> / Machine Learning</div>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Machine Learning</h1>
+            <p class="subtitle">From supervised learning to neural networks with practical Python projects</p>
+            <div class="meta-info">
+                <div class="meta-item"><span>📚</span> <span>3 SKS</span></div>
+                <div class="meta-item"><span>⏰</span> <span>14 Weeks</span></div>
+                <div class="meta-item"><span>💻</span> <span>Python Required</span></div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Course Overview</h2>
+            <p>This comprehensive machine learning course covers fundamental to advanced ML algorithms and techniques. Students will learn supervised and unsupervised learning methods, from linear regression to deep neural networks, with extensive hands-on coding in Python.</p>
+            <p>Through practical projects using real-world datasets, you'll develop the skills to build, train, evaluate, and deploy machine learning models for various applications in business, science, and technology.</p>
+        </div>
+        <div class="section">
+            <h2>Learning Outcomes</h2>
+            <div class="learning-outcomes">
+                <ul>
+                    <li>Understand ML fundamentals: supervised, unsupervised, and reinforcement learning</li>
+                    <li>Implement regression and classification algorithms from scratch</li>
+                    <li>Master ensemble methods: Random Forest, Gradient Boosting, XGBoost</li>
+                    <li>Build and train neural networks using TensorFlow and Keras</li>
+                    <li>Apply feature engineering, selection, and dimensionality reduction</li>
+                    <li>Evaluate model performance and prevent overfitting</li>
+                    <li>Deploy ML models for production use</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Course Topics</h2>
+            <div class="topics-grid">
+                <div class="topic-card"><h3>Week 1-2: ML Foundations</h3><p>Introduction to ML, Python libraries (NumPy, Pandas), data preprocessing, and exploratory analysis</p></div>
+                <div class="topic-card"><h3>Week 3-4: Supervised Learning I</h3><p>Linear regression, logistic regression, and polynomial features</p></div>
+                <div class="topic-card"><h3>Week 5-6: Supervised Learning II</h3><p>Decision trees, K-NN, Naive Bayes, and SVM</p></div>
+                <div class="topic-card"><h3>Week 7-8: Ensemble Methods</h3><p>Bagging, boosting, Random Forest, and XGBoost</p></div>
+                <div class="topic-card"><h3>Week 9-10: Unsupervised Learning</h3><p>K-Means clustering, hierarchical clustering, DBSCAN, and PCA</p></div>
+                <div class="topic-card"><h3>Week 11-12: Neural Networks</h3><p>Perceptrons, backpropagation, CNNs, and RNNs with TensorFlow</p></div>
+                <div class="topic-card"><h3>Week 13: Model Optimization</h3><p>Hyperparameter tuning, cross-validation, and regularization</p></div>
+                <div class="topic-card"><h3>Week 14: Final Project</h3><p>End-to-end ML project with real dataset and deployment</p></div>
+            </div>
+        </div>
+        <div class="tools-section">
+            <h2>Tools & Libraries</h2>
+            <div class="tools-grid">
+                <div class="tool-item"><div class="icon">🐍</div><h4>Python</h4><p>Core programming language</p></div>
+                <div class="tool-item"><div class="icon">📈</div><h4>Scikit-learn</h4><p>ML algorithms library</p></div>
+                <div class="tool-item"><div class="icon">🧠</div><h4>TensorFlow</h4><p>Deep learning framework</p></div>
+                <div class="tool-item"><div class="icon">📊</div><h4>Pandas</h4><p>Data manipulation</p></div>
+                <div class="tool-item"><div class="icon">💻</div><h4>Jupyter</h4><p>Interactive development</p></div>
+                <div class="tool-item"><div class="icon">📉</div><h4>Matplotlib</h4><p>Data visualization</p></div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Assessment</h2>
+            <p><strong>Weekly Labs (30%):</strong> Hands-on coding exercises with Jupyter notebooks</p>
+            <p><strong>Midterm Project (25%):</strong> Implement 3 supervised learning algorithms</p>
+            <p><strong>Final Project (35%):</strong> Complete ML pipeline with real-world dataset</p>
+            <p><strong>Participation (10%):</strong> Code reviews and peer collaboration</p>
+        </div>
+        <div class="cta-section">
+            <h2>Start Your ML Journey</h2>
+            <p>Access course notebooks, datasets, and coding tutorials</p>
+            <div class="cta-buttons">
+                <a href="/wiki/" class="btn btn-primary">View Course Wiki</a>
+                <a href="/resources/" class="btn btn-secondary">Download Datasets</a>
+                <a href="/teaching/" class="btn btn-secondary">All Courses</a>
+            </div>
+        </div>
+    </div>
+    <footer><p>&copy; 2024 Denny Sihombing. All rights reserved.</p></footer>
+</body>
+</html>
