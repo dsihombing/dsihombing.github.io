@@ -110,18 +110,18 @@
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 100;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      transition: all 0.3s ease;
-    }
-
-    header.scrolled {
-      box-shadow: var(--shadow-sm);
-    }
-
+    header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.02);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
     nav {
       max-width: 1200px;
       margin: 0 auto;
@@ -149,46 +149,47 @@
     }
 
     .nav-links a {
-      color: var(--gray);
-      font-size: 0.95rem;
-      font-weight: 500;
-      position: relative;
-    }
+  color: var(--gray);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--orange);
-      transition: width 0.3s ease;
-    }
+      .nav-links a:hover {
+  color: var(--orange);
+  background: rgba(255, 121, 63, 0.08);
+  transform: translateY(-1px);
+}
 
-    .nav-links a:hover::after {
-      width: 100%;
+.nav-links a:active {
+  transform: translateY(0);
+}
     }
 
     .nav-cta {
-      background: var(--orange);
-      color: #fff !important;
-      padding: 0.6rem 1.5rem;
-      border-radius: 8px;
-      font-weight: 600;
-      box-shadow: var(--shadow-md);
-    }
-
-    .nav-cta::after {
-      display: none;
-    }
+  background: linear-gradient(135deg, var(--orange), #ff9448);
+  color: #fff !important;
+  padding: 0.625rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(255, 121, 63, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
     .nav-cta:hover {
-      background: var(--orange-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255,107,53,0.3);
-    }
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 121, 63, 0.35);
+}
 
+.nav-cta:active {
+  transform: translateY(0);
+}
+    
     /* Mobile Menu Toggle */
     .menu-toggle {
       display: none;
