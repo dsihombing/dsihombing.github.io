@@ -1,6 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<!-- Language Detection Script -->
+<script>
+(function() {
+    // Cek apakah user sudah pernah pilih bahasa (simpan di localStorage)
+    const savedLang = localStorage.getItem('preferredLang');
+    const currentPath = window.location.pathname;
+    
+    // Jika bukan di halaman bahasa spesifik dan belum ada saved preference
+    if (!savedLang && currentPath === '/' || currentPath === '/index.html') {
+        // Deteksi bahasa browser
+        const userLang = navigator.language || navigator.userLanguage;
+        
+        // Jika browser bahasa Inggris, redirect ke /en/
+        if (userLang.startsWith('en')) {
+            window.location.href = '/en/';
+        }
+        // Default tetap di Indonesian (/)
+    }
+    
+    // Save language preference ketika user klik language switcher
+    document.addEventListener('DOMContentLoaded', function() {
+        const langButtons = document.querySelectorAll('.lang-btn');
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const lang = this.getAttribute('href').includes('/en/') ? 'en' : 'id';
+                localStorage.setItem('preferredLang', lang);
+            });
+        });
+    });
+})();
+</script>
+
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Denny Sihombing – Lecturer & Researcher in Information Systems</title>
