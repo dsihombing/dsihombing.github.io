@@ -1,1073 +1,1064 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Dengan: -->
-<title>Denny Sihombing – Dosen & Peneliti Sistem Informasi</title>
-<meta name="description" content="Dosen Sistem Informasi di Universitas Katolik Atma Jaya. Spesialisasi dalam Sistem Pendukung Keputusan, Multi-Criteria Decision Making (MCDM), dan Data Science.">
-
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dsihombing.github.io/">
-  <meta property="og:title" content="Denny Sihombing – Lecturer & Researcher">
-  <meta property="og:description" content="Lecturer in Information Systems specializing in Decision Support Systems and MCDM">
-  <meta property="og:image" content="https://dsihombing.github.io/assets/profile.jpg">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://dsihombing.github.io/">
-  <meta property="twitter:title" content="Denny Sihombing – Lecturer & Researcher">
-  <meta property="twitter:description" content="Lecturer in Information Systems specializing in Decision Support Systems and MCDM">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-    * { 
-      margin: 0; 
-      padding: 0; 
-      box-sizing: border-box; 
-    }
-    
-    :root {
-      --orange: #ff6b35;
-      --orange-hover: #e55a2b;
-      --orange-light: #fff5f2;
-      --dark: #1a202c;
-      --gray: #4a5568;
-      --light-gray: #718096;
-      --border: #e2e8f0;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-      --shadow-md: 0 4px 14px rgba(255,107,53,0.15);
-      --shadow-lg: 0 12px 40px rgba(255,107,53,0.12);
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      color: var(--dark);
-      line-height: 1.7;
-      background: #fff;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    a { 
-      color: var(--orange); 
-      text-decoration: none; 
-      transition: all 0.25s ease; 
-    }
-    
-    a:hover { 
-      color: var(--orange-hover); 
-    }
-
-    /* Loading Animation */
-    .page-loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      transition: opacity 0.5s, visibility 0.5s;
-    }
-
-    .page-loader.hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .loader-spinner {
-      width: 50px;
-      height: 50px;
-      border: 3px solid var(--border);
-      border-top-color: var(--orange);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    /* Header */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-    header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  box-shadow: 0 2px 20px rgba(0,0,0,0.02);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1.2rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo { 
-      font-size: 1.2rem; 
-      font-weight: 700; 
-      color: var(--dark);
-      transition: color 0.3s;
-    }
-
-    .logo:hover {
-      color: var(--orange);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-  color: var(--gray);
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  position: relative;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-      .nav-links a:hover {
-  color: var(--orange);
-  background: rgba(255, 121, 63, 0.08);
-  transform: translateY(-1px);
-}
-
-.nav-links a:active {
-  transform: translateY(0);
-}
-    }
-
-    .nav-cta {
-  background: linear-gradient(135deg, var(--orange), #ff9448);
-  color: #fff !important;
-  padding: 0.625rem 1.5rem;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  box-shadow: 0 4px 12px rgba(255, 121, 63, 0.25);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-    .nav-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 121, 63, 0.35);
-}
-
-.nav-cta:active {
-  transform: translateY(0);
-}
-    
-    /* Mobile Menu Toggle */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 5px;
-    }
-
-    .menu-toggle span {
-      width: 25px;
-      height: 3px;
-      background: var(--dark);
-      border-radius: 3px;
-      transition: all 0.3s ease;
-    }
-
-    .menu-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(6px, 6px);
-    }
-
-    .menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .menu-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
-    }
-/* Language Switcher */
-.lang-switcher {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-left: auto;
-    padding-left: 2rem;
-}
-
-.lang-btn {
-    color: var(--gray);
-    font-size: 0.9rem;
-    font-weight: 600;
-    padding: 0.4rem 0.8rem;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-}
-
-.lang-btn:hover {
-    color: var(--orange);
-    background: var(--orange-light);
-}
-
-.lang-btn.active {
-    color: var(--orange);
-    background: var(--orange-light);
-}
-
-.lang-separator {
-    color: var(--border);
-    font-weight: 300;
-}
-
-    /* Main */
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 7rem 2rem 4rem;
-    }
-
-    /* Hero */
-    .hero {
-      text-align: center;
-      padding: 3rem 0 5rem;
-      animation: fadeInUp 0.8s ease;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .hero-photo {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      margin: 0 auto 2rem;
-      border: 5px solid #fff;
-      box-shadow: var(--shadow-md);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .hero-photo:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 40px rgba(255,107,53,0.25);
-    }
-
-    .hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      letter-spacing: -0.03em;
-      color: var(--dark);
-    }
-
-    .hero .tagline {
-      font-size: 1.5rem;
-      color: var(--orange);
-      font-weight: 600;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero .description {
-      font-size: 1.15rem;
-      color: var(--gray);
-      max-width: 750px;
-      margin: 0 auto 2.5rem;
-      line-height: 1.8;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 1.25rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 0.875rem 2rem;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      display: inline-block;
-      border: none;
-      outline: none;
-    }
-
-    .btn-primary {
-      background: var(--orange);
-      color: #fff;
-      box-shadow: var(--shadow-md);
-    }
-
-    .btn-primary:hover {
-      background: var(--orange-hover);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(255,107,53,0.35);
-    }
-
-    .btn-secondary {
-      background: #fff;
-      color: var(--orange);
-      border: 2px solid var(--orange);
-    }
-
-    .btn-secondary:hover {
-      background: var(--orange-light);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-    }
-
-    /* Stats */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      margin: 4rem 0 5rem;
-    }
-
-    .stat-card {
-      text-align: center;
-      padding: 2rem 1.5rem;
-      background: #fff;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      transition: all 0.3s ease;
-    }
-
-    .stat-card:hover {
-      border-color: var(--orange);
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-6px);
-    }
-
-    .stat-number {
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--orange);
-      margin-bottom: 0.5rem;
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-size: 1rem;
-      color: var(--light-gray);
-      font-weight: 500;
-    }
-
-    /* Sections */
-    section {
-      margin: 5rem 0;
-      animation: fadeInUp 0.8s ease;
-    }
-
-    section h2 {
-      font-size: 2.25rem;
-      font-weight: 700;
-      margin-bottom: 1.25rem;
-      letter-spacing: -0.02em;
-      position: relative;
-      padding-left: 1.5rem;
-    }
-
-    section h2::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 5px;
-      height: 40px;
-      background: var(--orange);
-      border-radius: 3px;
-    }
-
-    section > p {
-      color: var(--gray);
-      font-size: 1.1rem;
-      margin-bottom: 2.5rem;
-      max-width: 900px;
-      line-height: 1.8;
-    }
-
-    /* Cards */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      margin-top: 2.5rem;
-    }
-
-    .card {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--orange), var(--orange-hover));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .card:hover {
-      border-color: var(--orange);
-      box-shadow: 0 16px 48px rgba(255,107,53,0.12);
-      transform: translateY(-6px);
-    }
-
-    .card-badge {
-      display: inline-block;
-      padding: 0.35rem 0.9rem;
-      background: var(--orange-light);
-      color: var(--orange);
-      border-radius: 6px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      margin-bottom: 1rem;
-    }
-
-     .card h3 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      color: var(--dark);
-    }
-
-    .card p {
-      color: var(--gray);
-      font-size: 1rem;
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-
-    .card ul {
-      list-style: none;
-      margin: 1rem 0;
-    }
-
-    .card ul li {
-      color: var(--gray);
-      font-size: 0.95rem;
-      padding-left: 1.5rem;
-      margin-bottom: 0.6rem;
-      position: relative;
-    }
-
-    .card ul li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--orange);
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-
-    .card-link {
-      display: inline-flex;
-      align-items: center;
-      margin-top: 0.5rem;
-      color: var(--orange);
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: gap 0.3s ease;
-      gap: 0.5rem;
-    }
-
-    .card-link:hover {
-      gap: 0.75rem;
-    }
-
-    .card-link::after {
-      content: '→';
-      font-size: 1.1rem;
-    }
-
-    /* Contact */
-    .contact-info {
-      background: var(--orange-light);
-      padding: 2.5rem;
-      border-radius: 16px;
-      border-left: 5px solid var(--orange);
-      max-width: 700px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .contact-info ul {
-      list-style: none;
-      margin: 1.5rem 0;
-    }
-
-    .contact-info li {
-      margin-bottom: 1rem;
-      color: var(--gray);
-      font-size: 1rem;
-      display: flex;
-      align-items: baseline;
-      gap: 0.5rem;
-    }
-
-    .contact-info strong {
-      color: var(--dark);
-      font-weight: 600;
-      min-width: 140px;
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 6rem;
-      padding: 2.5rem 2rem;
-      text-align: center;
-      border-top: 1px solid var(--border);
-      color: var(--light-gray);
-      font-size: 0.95rem;
-      background: #fafafa;
-    }
-
-    footer p:first-child {
-      font-weight: 500;
-      color: var(--gray);
-    }
-
-    /* Back to Top Button */
-    .back-to-top {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      width: 50px;
-      height: 50px;
-      background: var(--orange);
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: var(--shadow-md);
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 99;
-      border: none;
-      font-size: 1.5rem;
-    }
-
-    .back-to-top.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .back-to-top:hover {
-      background: var(--orange-hover);
-      transform: translateY(-5px);
-    }
-
-    /* Responsive Design */
-    
-    /* Tablet (481px - 991px) */
-    @media (min-width: 481px) and (max-width: 991px) {
-      .hero h1 { font-size: 2.5rem; }
-      .hero .tagline { font-size: 1.35rem; }
-      .stats { grid-template-columns: repeat(2, 1fr); }
-      .cards { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    /* Mobile (max-width: 768px) */
-    @media (max-width: 768px) {
-      .menu-toggle { display: flex; }
-      
-      nav { 
-        padding: 1rem 1.5rem;
-      }
-      
-      .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(255,255,255,0.98);
-        backdrop-filter: blur(12px);
-        flex-direction: column;
-        gap: 0;
-        padding: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .nav-links.active {
-        max-height: 400px;
-      }
-
-      .nav-links a {
-        padding: 1rem 2rem;
-        width: 100%;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .nav-links a::after {
-        display: none;
-      }
-
-      .nav-cta {
-        margin: 1rem 2rem;
-        width: calc(100% - 4rem);
-        text-align: center;
-      }
-
-      main { padding: 6rem 1.5rem 3rem; }
-      .hero h1 { font-size: 2.25rem; }
-      .hero .tagline { font-size: 1.25rem; }
-      .hero .description { font-size: 1rem; }
-      section h2 { font-size: 1.75rem; }
-      .stats { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-      .stat-number { font-size: 2.25rem; }
-      .cards { grid-template-columns: 1fr; }
-      .back-to-top { bottom: 1.5rem; right: 1.5rem; width: 45px; height: 45px; }
-    }
-
-    /* Small Mobile (max-width: 480px) */
-    @media (max-width: 480px) {
-      .hero-photo { width: 120px; height: 120px; }
-      .hero h1 { font-size: 1.75rem; }
-      .hero .tagline { font-size: 1.1rem; }
-      .btn { padding: 0.75rem 1.5rem; font-size: 0.9rem; }
-      .stat-number { font-size: 2rem; }
-      section h2 { font-size: 1.5rem; padding-left: 1rem; }
-      section h2::before { width: 4px; height: 30px; }
-      .card { padding: 1.5rem; }
-      .contact-info { padding: 1.5rem; }
-      .contact-info li { flex-direction: column; align-items: flex-start; }
-      .contact-info strong { min-width: auto; }
-    }
-
-    /* Print Styles */
-    @media print {
-      header { position: static; }
-      .nav-cta, .hero-buttons, .back-to-top { display: none; }
-      .stat-card, .card { break-inside: avoid; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denny Sihombing – Dosen & Peneliti Sistem Informasi</title>
+    <meta name="description" content="Dosen Sistem Informasi yang berfokus pada Sistem Pendukung Keputusan, MCDM, Machine Learning, dan Transformasi Digital. Mengajar dan meneliti di Universitas Katolik Atma Jaya.">
+    <meta name="author" content="Denny Sihombing">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Denny Sihombing – Dosen & Peneliti Sistem Informasi">
+    <meta property="og:description" content="Profil akademik dan portofolio pengajaran Denny Sihombing, fokus pada Sistem Pendukung Keputusan, MCDM, dan Transformasi Digital.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dsihombing.github.io/id/">
+    <meta property="og:image" content="https://dsihombing.github.io/denny.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/denny.png" type="image/png">
+
+    <!-- Fonts & Basic Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0f172a;
+            --bg-alt: #020617;
+            --card-bg: #020617;
+            --accent: #f97316;
+            --accent-soft: rgba(249, 115, 22, 0.12);
+            --accent-strong: rgba(249, 115, 22, 0.24);
+            --text: #e5e7eb;
+            --text-soft: #9ca3af;
+            --text-faint: #6b7280;
+            --border-subtle: rgba(148, 163, 184, 0.3);
+            --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.85);
+            --radius-lg: 18px;
+            --radius-full: 999px;
+            --nav-blur: blur(18px);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: radial-gradient(circle at top, #1f2937 0, #020617 50%, #000000 100%);
+            color: var(--text);
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .page {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 24px 16px 48px;
+        }
+
+        @media (min-width: 768px) {
+            .page {
+                padding: 32px 20px 64px;
+            }
+        }
+
+        /* NAVBAR */
+        .nav-shell {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            backdrop-filter: var(--nav-blur);
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.9), transparent);
+        }
+
+        .nav {
+            max-width: 1120px;
+            margin: 0 auto 12px;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-mark {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: radial-gradient(circle at 30% 0%, #fed7aa 0, #fb923c 30%, #c2410c 85%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 15px;
+            color: #0b1120;
+            box-shadow: 0 12px 30px rgba(248, 113, 22, 0.7);
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .brand-name {
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            font-size: 14px;
+        }
+
+        .brand-role {
+            font-size: 12px;
+            color: var(--text-soft);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 14px;
+            color: var(--text-soft);
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 6px 0;
+        }
+
+        .nav-link span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            border-radius: 999px;
+            background: linear-gradient(to right, #fb923c, #f97316);
+            transition: width 0.18s ease-out;
+        }
+
+        .nav-link:hover::after {
+            width: 18px;
+        }
+
+        .nav-link.active {
+            color: #f9fafb;
+            font-weight: 500;
+        }
+
+        .nav-link.active::after {
+            width: 18px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .lang-switch {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            padding: 2px;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(148, 163, 184, 0.6);
+        }
+
+        .lang-pill {
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            cursor: pointer;
+            color: var(--text-soft);
+            transition: all 0.18s ease-out;
+        }
+
+        .lang-pill.active {
+            background: linear-gradient(135deg, #f97316, #fb923c);
+            color: #0b1120;
+            font-weight: 600;
+            box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.6);
+        }
+
+        .nav-cta {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .nav {
+                margin-bottom: 20px;
+                padding-inline: 20px;
+            }
+            .nav-links {
+                gap: 22px;
+            }
+            .nav-cta {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 6px 12px;
+                border-radius: 999px;
+                background: rgba(15, 23, 42, 0.85);
+                border: 1px solid var(--accent-strong);
+                color: #fed7aa;
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+            }
+        }
+
+        /* HERO */
+        .hero {
+            display: grid;
+            gap: 24px;
+            align-items: center;
+        }
+
+        @media (min-width: 900px) {
+            .hero {
+                grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+                gap: 28px;
+            }
+        }
+
+        .hero-main {
+            padding: 20px 18px;
+            border-radius: 22px;
+            background: radial-gradient(circle at 0% 0%, rgba(249, 115, 22, 0.08) 0, rgba(15, 23, 42, 0.95) 46%, #020617 100%);
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            color: var(--text-soft);
+            font-size: 11px;
+            margin-bottom: 10px;
+        }
+
+        .hero-pill-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 0%, #bbf7d0 0, #22c55e 45%, #15803d 100%);
+            box-shadow: 0 0 12px rgba(16, 185, 129, 0.9);
+        }
+
+        .hero-subtitle {
+            font-size: 13px;
+            color: var(--text-soft);
+            margin-bottom: 8px;
+        }
+
+        .hero-title {
+            font-size: 26px;
+            line-height: 1.2;
+            letter-spacing: 0.01em;
+            font-weight: 600;
+            margin: 0 0 4px;
+        }
+
+        .hero-role {
+            font-size: 18px;
+            color: #fed7aa;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .hero-text {
+            font-size: 14px;
+            color: var(--text-soft);
+            line-height: 1.65;
+            max-width: 620px;
+            margin-bottom: 18px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 9px 16px;
+            border-radius: 999px;
+            border: none;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            color: #0b1120;
+            background: linear-gradient(135deg, #f97316, #fb923c);
+            box-shadow: 0 12px 35px rgba(251, 146, 60, 0.55);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            background: rgba(15, 23, 42, 0.8);
+            color: var(--text-soft);
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .meta-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 9px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            font-size: 11px;
+            color: var(--text-soft);
+        }
+
+        .meta-label {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 10px;
+            color: var(--text-faint);
+        }
+
+        .meta-value {
+            font-weight: 500;
+            color: #e5e7eb;
+        }
+
+        .hero-photo-card {
+            border-radius: 22px;
+            background: radial-gradient(circle at 0 0, rgba(248, 113, 22, 0.12), rgba(15, 23, 42, 0.98));
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            padding: 14px;
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .hero-photo-wrapper {
+            width: 170px;
+            height: 170px;
+            border-radius: 26px;
+            padding: 3px;
+            background: conic-gradient(from 140deg, #fb923c, #f97316, #facc15, #fb923c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-photo-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 22px;
+            background: radial-gradient(circle at 20% 0%, #1f2937, #020617);
+            overflow: hidden;
+        }
+
+        .hero-photo-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-photo-meta {
+            text-align: center;
+        }
+
+        .hero-photo-name {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .hero-photo-role {
+            font-size: 12px;
+            color: var(--text-soft);
+            margin-bottom: 8px;
+        }
+
+        .hero-photo-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+        }
+
+        .tag-pill {
+            font-size: 11px;
+            padding: 3px 7px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            color: var(--text-soft);
+        }
+
+        /* SECTION WRAPPER */
+        .section {
+            margin-top: 32px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            font-size: 13px;
+            color: var(--text-soft);
+        }
+
+        .section-tagline {
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        /* ABOUT SECTION */
+        .about-card {
+            border-radius: var(--radius-lg);
+            background: radial-gradient(circle at 0 0, rgba(249, 115, 22, 0.16), rgba(15, 23, 42, 0.98));
+            border: 1px solid rgba(148, 163, 184, 0.55);
+            padding: 16px 16px 14px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .about-text {
+            font-size: 14px;
+            color: var(--text-soft);
+            line-height: 1.7;
+            margin: 0 0 10px;
+        }
+
+        .about-list {
+            font-size: 13px;
+            color: var(--text-soft);
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .about-list li {
+            margin-bottom: 4px;
+        }
+
+        /* TEACHING SECTION */
+        .teaching-grid {
+            display: grid;
+            gap: 14px;
+        }
+
+        @media (min-width: 820px) {
+            .teaching-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        .course-card {
+            border-radius: var(--radius-lg);
+            background: rgba(15, 23, 42, 0.96);
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            padding: 14px 14px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .course-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid var(--accent-soft);
+            color: #fed7aa;
+        }
+
+        .course-title {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .course-text {
+            font-size: 13px;
+            color: var(--text-soft);
+            line-height: 1.6;
+        }
+
+        .course-list {
+            margin: 6px 0 0;
+            padding-left: 16px;
+            font-size: 12px;
+            color: var(--text-soft);
+        }
+
+        .course-list li {
+            margin-bottom: 3px;
+        }
+
+        /* RESEARCH SECTION */
+        .research-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        @media (min-width: 768px) {
+            .research-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        .research-card {
+            border-radius: var(--radius-lg);
+            background: radial-gradient(circle at 0 0, rgba(249, 115, 22, 0.12), rgba(15, 23, 42, 0.99));
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            padding: 12px 12px 10px;
+        }
+
+        .research-title {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .research-text {
+            font-size: 12px;
+            color: var(--text-soft);
+            line-height: 1.6;
+        }
+
+        .research-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .link-pill {
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.55);
+            color: var(--text-soft);
+            background: rgba(15, 23, 42, 0.96);
+        }
+
+        /* LEARNING RESOURCES */
+        .resources-card {
+            border-radius: var(--radius-lg);
+            background: rgba(15, 23, 42, 0.97);
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            padding: 14px 14px 12px;
+        }
+
+        .resources-grid {
+            display: grid;
+            gap: 10px;
+        }
+
+        @media (min-width: 820px) {
+            .resources-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        .resource-item {
+            border-radius: 14px;
+            padding: 10px 10px 9px;
+            background: rgba(15, 23, 42, 0.98);
+            border: 1px solid rgba(148, 163, 184, 0.5);
+        }
+
+        .resource-label {
+            font-size: 11px;
+            color: var(--accent);
+            margin-bottom: 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .resource-title {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .resource-text {
+            font-size: 12px;
+            color: var(--text-soft);
+            line-height: 1.6;
+        }
+
+        /* CONTACT / FOOTER */
+        .contact-card {
+            border-radius: var(--radius-lg);
+            background: radial-gradient(circle at 0 0, rgba(248, 113, 22, 0.15), rgba(15, 23, 42, 0.99));
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            padding: 14px 14px 12px;
+            margin-top: 28px;
+        }
+
+        .contact-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        @media (min-width: 820px) {
+            .contact-grid {
+                grid-template-columns: minmax(0, 2.3fr) minmax(0, 2fr);
+            }
+        }
+
+        .contact-text {
+            font-size: 13px;
+            color: var(--text-soft);
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .contact-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .chip {
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.96);
+            border: 1px solid rgba(148, 163, 184, 0.55);
+            color: var(--text-soft);
+        }
+
+        .social-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 12px;
+        }
+
+        .social-link {
+            padding: 4px 8px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.98);
+            border: 1px solid rgba(148, 163, 184, 0.55);
+            color: var(--text-soft);
+        }
+
+        .footer {
+            margin-top: 18px;
+            font-size: 11px;
+            color: var(--text-faint);
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        // Language switcher: simpan preferensi di localStorage dan redirect
+        document.addEventListener('DOMContentLoaded', function () {
+            const currentLang = 'id';
+            const stored = localStorage.getItem('dsih_lang');
+            if (!stored) {
+                localStorage.setItem('dsih_lang', currentLang);
+            }
+
+            document.querySelectorAll('[data-lang-target]').forEach(function (el) {
+                el.addEventListener('click', function () {
+                    const target = el.getAttribute('data-lang-target');
+                    localStorage.setItem('dsih_lang', target);
+                    if (target === 'en') {
+                        window.location.href = '/en/';
+                    } else {
+                        window.location.href = '/id/';
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
-  <!-- Page Loader -->
-  <div class="page-loader">
-    <div class="loader-spinner"></div>
-  </div>
+<div class="nav-shell">
+    <header class="nav">
+        <div class="nav-left">
+            <a href="/id/#" class="brand-mark" aria-label="Beranda">
+                DS
+            </a>
+            <div class="brand-text">
+                <div class="brand-name">Denny Sihombing</div>
+                <div class="brand-role">Dosen Sistem Informasi</div>
+            </div>
+        </div>
+        <nav class="nav-links" aria-label="Navigasi utama">
+            <a href="#about" class="nav-link active"><span>Profil</span></a>
+            <a href="#teaching" class="nav-link"><span>Pengajaran</span></a>
+            <a href="#research" class="nav-link"><span>Riset</span></a>
+            <a href="#resources" class="nav-link"><span>Wiki & Lab</span></a>
+        </nav>
+        <div class="nav-right">
+            <div class="lang-switch" aria-label="Pengaturan bahasa">
+                <button class="lang-pill active" data-lang-target="id">ID</button>
+                <button class="lang-pill" data-lang-target="en">EN</button>
+            </div>
+            <div class="nav-cta">
+                <span>Terbuka kolaborasi</span>
+            </div>
+        </div>
+    </header>
+</div>
 
-  <!-- Header -->
-  <header id="header">
-    <nav>
-      <div class="logo">
-        <a href="/" style="color: inherit;">Denny Sihombing</a>
-      </div>
-      <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">
-        <span></span>
-DS
-        <span></span>
-      </button>
-         <!-- Language Switcher -->
-    <div class="lang-switcher">
-        <a href="/id/" class="lang-btn">ID</a>
-        <span class="lang-separator">|</span>
-        <a href="/en/" class="lang-btn active">EN</a>
-    </div>
+<main class="page">
+    <!-- HERO -->
+    <section class="hero" id="top">
+        <div class="hero-main">
+            <div class="hero-pill">
+                <span class="hero-pill-dot"></span>
+                <span>Profil akademik & portofolio pengajaran</span>
+            </div>
+            <div class="hero-subtitle">Universitas Katolik Atma Jaya – Program Studi Sistem Informasi</div>
+            <h1 class="hero-title">Denny Sihombing</h1>
+            <div class="hero-role">Dosen & Peneliti Sistem Informasi</div>
+            <p class="hero-text">
+                Memiliki minat yang kuat pada sistem pendukung keputusan, machine learning, dan transformasi digital.
+                Berkomitmen membimbing mahasiswa menjadi profesional Sistem Informasi yang siap menghadapi
+                tantangan masa depan di Universitas Katolik Atma Jaya.
+            </p>
+            <div class="hero-actions">
+                <a href="#resources" class="btn-primary">Jelajahi Decision Lab</a>
+                <a href="#contact" class="btn-outline">Hubungi Saya</a>
+            </div>
+            <div class="hero-meta">
+                <div class="meta-pill">
+                    <span class="meta-label">Tahun Mengajar</span>
+                    <span class="meta-value">5+ tahun</span>
+                </div>
+                <div class="meta-pill">
+                    <span class="meta-label">Mata Kuliah Inti</span>
+                    <span class="meta-value">Sistem Pendukung Keputusan, Machine Learning, Transformasi Digital</span>
+                </div>
+                <div class="meta-pill">
+                    <span class="meta-label">Tugas Akhir</span>
+                    <span class="meta-value">10+ bimbingan</span>
+                </div>
+            </div>
+        </div>
 
-      <div class="nav-links" id="navLinks">
-        <a href/about/about">About</a>
-          <a href="https://dennyjcs.medium.com" target="_blank" rel="noopener">Blog</a>
-        <a href="https://dsihombing.github.io/decisionlab/" class="nav-cta">Decision Lab</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <!-- Hero Section -->
-    <section class="hero" id="about">
-      <div class="hero-photo">
-        <img src="denny.png" alt="Photo of Denny Sihombing" loading="lazy">
-      </div>
-      <h1>Denny Sihombing</h1>
-    <div class="tagline">Dosen Sistem Informasi</div>
-<p class="description">
-    Berdedikasi pada sistem pendukung keputusan, machine learning, dan transformasi digital. 
-    Membimbing mahasiswa menjadi profesional SI yang siap menghadapi masa depan di Universitas Katolik Atma Jaya.
-</p>
-      <div class="hero-buttons">
-       <a href="https://dsihombing.github.io/decisionlab/" class="btn btn-primary">Jelajahi Decision Lab</a>
-<a href="#contact" class="btn btn-secondary">Hubungi Saya</a>
-      </div>
+        <aside class="hero-photo-card" aria-label="Foto dan ringkasan profil">
+            <div class="hero-photo-wrapper">
+                <div class="hero-photo-inner">
+                    <img src="/denny.png" alt="Foto profil Denny Sihombing">
+                </div>
+            </div>
+            <div class="hero-photo-meta">
+                <div class="hero-photo-name">Denny Sihombing</div>
+                <div class="hero-photo-role">Dosen Sistem Informasi, Atma Jaya</div>
+                <div class="hero-photo-tags">
+                    <span class="tag-pill">Sistem Pendukung Keputusan</span>
+                    <span class="tag-pill">MCDM (AHP, TOPSIS, SAW)</span>
+                    <span class="tag-pill">Data-Driven Decision Making</span>
+                    <span class="tag-pill">Transformasi Digital</span>
+                </div>
+            </div>
+        </aside>
     </section>
 
-    <!-- Stats Section -->
-    <div class="stats">
-      <div class="stat-card">
-        <div class="stat-number">5+</div>
-        <div class="stat-label">Years Teaching</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">3</div>
-        <div class="stat-label">Core Courses</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">10+</div>
-        <div class="stat-label">Thesis Supervised</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">1</div>
-        <div class="stat-label">Decision Lab</div>
-      </div>
-    </div>
-
-    <!-- About Section -->
-    <section>
-      <h2>About Me</h2>
-      <p>
-        With a profound passion for both technology and pedagogy, my academic focus is centered on 
-        <strong>systems analysis and digital transformation</strong> in the business sector, and the effective 
-        management of information technology projects to achieve organizational objectives.
-      </p>
-      <p>
-        I am dedicated to mentoring students to become competent information systems professionals, 
-        fully equipped to meet the challenges of the contemporary industry.
-      </p>
+    <!-- ABOUT -->
+    <section id="about" class="section" aria-labelledby="about-heading">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title" id="about-heading">Profil Singkat</h2>
+                <p class="section-subtitle">Fokus pada pengajaran, riset, dan pendampingan mahasiswa di Sistem Informasi.</p>
+            </div>
+        </div>
+        <article class="about-card">
+            <p class="about-text">
+                Dengan minat yang kuat pada teknologi dan pedagogi, fokus akademik saya berada pada analisis sistem
+                dan transformasi digital di sektor bisnis, serta pengelolaan proyek teknologi informasi yang efektif
+                untuk mendukung pencapaian tujuan organisasi.
+            </p>
+            <p class="about-text">
+                Saya berkomitmen membimbing mahasiswa menjadi profesional sistem informasi yang kompeten dan siap
+                menghadapi dinamika serta tantangan industri masa kini.
+            </p>
+            <ul class="about-list">
+                <li>Pengajaran pada mata kuliah Sistem Pendukung Keputusan, Machine Learning, dan Transformasi Digital.</li>
+                <li>Riset pada bidang MCDM, data-driven decision making, dan sistem informasi dalam konteks bisnis.</li>
+                <li>Aktif membimbing tugas akhir dan mengembangkan materi belajar berbasis proyek untuk mahasiswa.</li>
+            </ul>
+        </article>
     </section>
 
-    <!-- Teaching Section -->
-    <section id="teaching">
-      <h2>Teaching</h2>
-      <p>
-        I teach core courses in information systems, Decision Support System, Machine Learning, and Digital Transformation at the undergraduate 
-                level at Atma Jaya Catholic University.      </p>
-      <div class="cards">
-        <div class="card">
-          <span class="card-badge">Undergraduate</span>
-          <h3>Decision Support Systems</h3>
-          <p>
-            This course provides a comprehensive introduction to decision support systems (DSS), covering fundamental concepts, architectures, and methodologies for enhancing organizational decision-making. Students explore multi-criteria decision making (MCDM) techniques including AHP, TOPSIS, and SAW, alongside model-driven and data-driven approaches. The course emphasizes practical application of DSS frameworks, decision analysis, and visualization techniques to solve complex business problems and support strategic planning in modern information systems environments.
-          </p>
-          <ul>
-            <li>DSS concepts and architecture</li>
-            <li>MCDM methods (AHP, TOPSIS, SAW)</li>
-            <li>Model-driven and data-driven DSS</li>
-            <li>Decision analysis and visualization</li>
-          </ul>
+    <!-- TEACHING -->
+    <section id="teaching" class="section" aria-labelledby="teaching-heading">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title" id="teaching-heading">Pengajaran</h2>
+                <p class="section-subtitle">Mata kuliah inti yang diajarkan di Program Studi Sistem Informasi.</p>
+            </div>
+            <div class="section-tagline">Fokus pada pemahaman konsep dan penerapan praktis.</div>
         </div>
-        <div class="card">
-          <span class="card-badge">Undergraduate</span>
-          <h3>Machine Learning</h3>
-          <p>
-            This course introduces fundamental machine learning concepts and practical techniques for extracting insights from data. Students gain hands-on experience in data wrangling, preprocessing, and exploratory data analysis (EDA) while developing skills in predictive modeling and machine learning algorithms. The curriculum emphasizes real-world applications in organizational contexts, covering supervised and unsupervised learning methods, model evaluation, and effective data visualization for storytelling and decision support.
-          </p>
-          <ul>
-            <li>Data wrangling and preprocessing</li>
-            <li>Exploratory data analysis (EDA)</li>
-            <li>Predictive modeling and machine learning</li>
-            <li>Data visualization and storytelling</li>
-          </ul>
+        <div class="teaching-grid">
+            <!-- DSS -->
+            <article class="course-card">
+                <div class="course-badge">
+                    <span>SPK</span>
+                    <span>Decision Support Systems</span>
+                </div>
+                <h3 class="course-title">Sistem Pendukung Keputusan</h3>
+                <p class="course-text">
+                    Mata kuliah ini memberikan pengenalan komprehensif mengenai sistem pendukung keputusan (SPK),
+                    mencakup konsep dasar, arsitektur, dan metodologi untuk meningkatkan kualitas pengambilan
+                    keputusan di organisasi.
+                </p>
+                <p class="course-text">
+                    Mahasiswa mempelajari teknik pengambilan keputusan multikriteria (MCDM) seperti AHP, TOPSIS,
+                    dan SAW, serta pendekatan berbasis model dan berbasis data untuk mendukung perencanaan
+                    dan strategi organisasi.
+                </p>
+                <ul class="course-list">
+                    <li>Konsep dan arsitektur SPK.</li>
+                    <li>Metode MCDM (AHP, TOPSIS, SAW).</li>
+                    <li>SPK berbasis model dan berbasis data.</li>
+                    <li>Analisis keputusan dan visualisasi.</li>
+                </ul>
+            </article>
+
+            <!-- ML -->
+            <article class="course-card">
+                <div class="course-badge">
+                    <span>ML</span>
+                    <span>Machine Learning</span>
+                </div>
+                <h3 class="course-title">Machine Learning</h3>
+                <p class="course-text">
+                    Mata kuliah ini memperkenalkan konsep dasar machine learning dan teknik praktis untuk menggali
+                    insight dari data melalui pemodelan dan analisis.
+                </p>
+                <p class="course-text">
+                    Mahasiswa memperoleh pengalaman langsung dalam pengolahan data, pra-pemrosesan, analisis data
+                    eksploratori (EDA), serta pengembangan model prediktif dengan berbagai algoritma machine learning.
+                </p>
+                <ul class="course-list">
+                    <li>Pengolahan dan pra-pemrosesan data.</li>
+                    <li>Analisis data eksploratori (EDA).</li>
+                    <li>Pemodelan prediktif dan algoritma ML.</li>
+                    <li>Visualisasi data dan storytelling.</li>
+                </ul>
+            </article>
+
+            <!-- Digital Transformation -->
+            <article class="course-card">
+                <div class="course-badge">
+                    <span>DX</span>
+                    <span>Digital Transformation</span>
+                </div>
+                <h3 class="course-title">Transformasi Digital</h3>
+                <p class="course-text">
+                    Mata kuliah ini mengkaji dimensi strategis transformasi digital di organisasi modern, serta
+                    bagaimana teknologi baru dan sistem informasi mendorong inovasi dan keunggulan bersaing.
+                </p>
+                <p class="course-text">
+                    Mahasiswa menganalisis kerangka kerja transformasi digital, inovasi model bisnis, pengembangan
+                    strategi digital, pengambilan keputusan fuzzy pada lingkungan yang tidak pasti, dan praktik
+                    manajemen perubahan di era digital.
+                </p>
+                <ul class="course-list">
+                    <li>Strategi digital dan inovasi model bisnis.</li>
+                    <li>Pengambilan keputusan fuzzy.</li>
+                    <li>Kerangka dan metodologi transformasi digital.</li>
+                    <li>Perubahan organisasi di era digital.</li>
+                </ul>
+            </article>
         </div>
-        <div class="card">
-          <span class="card-badge">Undergraduate</span>
-          <h3>Digital Transformation</h3>
-          <p>
-            This course examines the strategic dimensions of digital transformation in contemporary organizations, exploring how emerging technologies and information systems drive innovation and competitive advantage. Students analyze digital transformation frameworks, business model innovation, and implementation methodologies while investigating topics such as digital strategy development, fuzzy decision-making for uncertain environments, and change management practices. The course integrates MCDM approaches and analytical modeling to address complex transformation challenges in the digital era.
-          </p>
-          <ul>
-            Comprehensive study of digital transformation strategies, implementation frameworks, and emerging technologies that drive organizational innovation and competitive advantage in the digital era.
-                    <li>Digital strategy and business model innovation</li>            <li>Fuzzy decision making</li>
-                    <li>Digital transformation frameworks and methodologies</li>          </ul>
-        </div>
-      </div>
     </section>
 
-    <!-- Research Section -->
-    <section id="research">
-      <h2>Research & Publications</h2>
-      <p>
-        Research interests lie at the intersection of decision support systems, multi-criteria decision 
-        making (MCDM), and data science applications in business and information systems.
-      </p>
-      <div class="cards">
-        <div class="card">
-          <h3>Decision Support & MCDM</h3>
-          <p>
-            Development and application of multi-criteria decision making methods such as AHP, TOPSIS, 
-            and related approaches for practical decision problems in business and organizational contexts.
-          </p>
+    <!-- RESEARCH -->
+    <section id="research" class="section" aria-labelledby="research-heading">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title" id="research-heading">Riset & Publikasi</h2>
+                <p class="section-subtitle">Minat riset di bidang SPK, MCDM, dan data-driven decision making.</p>
+            </div>
+            <div class="section-tagline">Profil lengkap tersedia di portal riset daring.</div>
         </div>
-        <div class="card">
-          <h3>Data-Driven Decision Making</h3>
-          <p>
-            Integration of data analytics, machine learning, and business intelligence to enhance 
-            decision-making processes and support strategic planning in organizations.
-          </p>
+        <div class="research-grid">
+            <article class="research-card">
+                <h3 class="research-title">Sistem Pendukung Keputusan & MCDM</h3>
+                <p class="research-text">
+                    Pengembangan dan penerapan metode pengambilan keputusan multikriteria seperti AHP, TOPSIS,
+                    dan pendekatan terkait untuk menyelesaikan masalah keputusan praktis dalam konteks bisnis
+                    dan organisasi.
+                </p>
+            </article>
+            <article class="research-card">
+                <h3 class="research-title">Pengambilan Keputusan Berbasis Data</h3>
+                <p class="research-text">
+                    Integrasi analitik data, machine learning, dan business intelligence untuk meningkatkan proses
+                    pengambilan keputusan dan mendukung perencanaan strategis di organisasi.
+                </p>
+            </article>
+            <article class="research-card">
+                <h3 class="research-title">Transformasi Digital</h3>
+                <p class="research-text">
+                    Mengkaji peran sistem informasi dan teknologi baru dalam mendorong transformasi digital dan
+                    perubahan organisasi di berbagai industri.
+                </p>
+                <div class="research-links">
+                    <a href="https://scholar.google.com" class="link-pill" target="_blank" rel="noopener">Google Scholar</a>
+                    <a href="https://orcid.org" class="link-pill" target="_blank" rel="noopener">ORCID</a>
+                    <a href="https://www.researchgate.net" class="link-pill" target="_blank" rel="noopener">ResearchGate</a>
+                </div>
+            </article>
         </div>
-        <div class="card">
-          <h3>Digital Transformation</h3>
-          <p>
-            Exploring the role of information systems and emerging technologies in driving digital 
-            transformation and organizational change in various industries.
-          </p>
-        </div>
-      </div>
-      <p style="margin-top: 2rem; color: var(--gray);">
-        For publications and academic profiles:
-        <!-- Line 843 - Google Scholar -->
-<a href="https://scholar.google.com/citations?user=1s-0eboAAAAJ" target="_blank" rel="noopener">Google Scholar</a> ·
-
-<!-- Line 844 - ORCID -->
-<a href="https://orcid.org/0000-0002-9221-3905" target="_blank" rel="noopener">ORCID</a> ·
-
-<!-- Line 845 - ResearchGate (opsional jika Anda punya) -->
-<a href="https://www.researchgate.net/profile/Denny-Sihombing" target="_blank" rel="noopener">ResearchGate</a>
-
-      </p>
     </section>
 
-    <!-- Learning Resources Section -->
-    <section>
-      <h2>Learning Resources</h2>
-      <p>
-        To support students and independent learners, I maintain several online resources with structured 
-        learning materials and practical tools.
-      </p>
-      <div class="cards">
-        <div class="card">
-          <span class="card-badge">Knowledge Base</span>
-          <h3>Personal Wiki</h3>
-          <p>
-            Curated notes, explanations, and references for courses, methods, and tools related to 
-            information systems, analytics, and decision support.
-          </p>
-          <a 702
-            class="card-link" target="_blank" rel="noopener">Visit Wiki</a>
+    <!-- RESOURCES -->
+    <section id="resources" class="section" aria-labelledby="resources-heading">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title" id="resources-heading">Wiki & Decision Lab</h2>
+                <p class="section-subtitle">Sumber belajar daring untuk mahasiswa dan pembelajar mandiri.</p>
+            </div>
+            <div class="section-tagline">Materi terstruktur, contoh kasus, dan tools praktis.</div>
         </div>
-        <div class="card">
-          <span class="card-badge">MCDM Hub</span>
-          <h
-          <span class="card-badge">MCDM Hub</span>
-      <h3>Decision Lab</h3>          <p>
-            MCDM learning hub focusing on methods such as AHP, TOPSIS, and SAW with step-by-step
-        examples, templates, and practical resources.
-          </p>
-          <a href="https://dsihombing.github.io/decisionlab/" class="card-link" target="_blank" rel="noopener">Visit Decision Lab</a>
-        </div>
-      </div>
+        <article class="resources-card">
+            <p class="contact-text">
+                Untuk mendukung mahasiswa dan pembelajar mandiri, saya mengelola beberapa sumber belajar daring
+                dengan materi terstruktur dan perangkat praktis yang dapat digunakan dalam konteks perkuliahan
+                maupun praktik profesional.
+            </p>
+            <div class="resources-grid">
+                <div class="resource-item">
+                    <div class="resource-label">Wiki</div>
+                    <div class="resource-title">Personal Wiki</div>
+                    <p class="resource-text">
+                        Catatan terkurasi, penjelasan, dan referensi untuk mata kuliah, metode, dan tools yang
+                        berkaitan dengan sistem informasi, analitik, dan sistem pendukung keputusan.
+                    </p>
+                    <a href="/wiki/" class="link-pill">Buka Wiki</a>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-label">Decision Lab</div>
+                    <div class="resource-title">Laboratorium MCDM</div>
+                    <p class="resource-text">
+                        Pusat pembelajaran MCDM yang berfokus pada metode seperti AHP, TOPSIS, dan SAW dengan
+                        contoh langkah demi langkah, template, serta sumber daya praktis.
+                    </p>
+                    <a href="/decisionlab/id/" class="link-pill">Masuk ke Decision Lab</a>
+                </div>
+            </div>
+        </article>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Let's Connect</h2>
-      <p>
-        Open to collaboration on teaching, research projects, thesis supervision, and guest lectures in 
-        decision support systems, analytics, and information systems.
-      </p>
-      <div class="contact-info">
-        <ul>
-          <li><strong>Email (Academic):</strong> <span>denny.jean@atmajaya.ac.id</span></li>
-          <li><strong>Email (Personal):</strong> <span>djc.sihombing@gmail.com</span></li>
-          <li><strong>Institution:</strong> <span>Atma Jaya Catholic University of Indonesia</span></li>
-          <li><strong>GitHub:</strong> <a href="https://github.com/dsihombing" target="_blank" rel="noopener">github.com/dsihombing</a></li>
-        </ul>
-      </div>
+    <!-- CONTACT -->
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title" id="contact-heading">Kontak & Kolaborasi</h2>
+                <p class="section-subtitle">Terbuka untuk kolaborasi pengajaran, riset, dan kegiatan akademik.</p>
+            </div>
+        </div>
+        <article class="contact-card">
+            <div class="contact-grid">
+                <div>
+                    <p class="contact-text">
+                        Terbuka untuk kolaborasi dalam pengajaran, proyek penelitian, pembimbingan tugas akhir,
+                        dan kuliah tamu di bidang sistem pendukung keputusan, analitik, dan sistem informasi.
+                    </p>
+                    <p class="contact-text">
+                        Situs ini dikelola sebagai portofolio akademik dan pengajaran, serta sebagai pusat
+                        informasi bagi mahasiswa, kolaborator, dan mitra.
+                    </p>
+                    <div class="contact-chips">
+                        <span class="chip">Pengajaran & kurikulum</span>
+                        <span class="chip">Proyek riset terapan</span>
+                        <span class="chip">Bimbingan tugas akhir</span>
+                        <span class="chip">Kuliah tamu & workshop</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="section-subtitle" style="margin-bottom: 6px;">Saluran kontak</div>
+                    <div class="social-list">
+                        <a href="mailto:djc.sihombing@gmail.com" class="social-link">Email</a>
+                        <a href="https://www.linkedin.com" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://dennyjcs.medium.com" class="social-link" target="_blank" rel="noopener">Medium</a>
+                        <a href="https://github.com/dsihombing" class="social-link" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <div class="footer">
+            © <span id="year"></span> Denny Sihombing · Situs ini merupakan bagian dari ekosistem akademik dan pengajaran.
+        </div>
     </section>
-  </main>
+</main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Denny Sihombing · Lecturer & Researcher · Atma Jaya Catholic University of Indonesia</p>
-    <p style="margin-top: 0.5rem; font-size: 0.85rem;">This site is maintained as an academic and teaching portfolio.</p>
-  </footer>
-
-  <!-- Back to Top Button -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
-
-  <!-- JavaScript -->
-  <script>
-    // Page Loader
-    window.addEventListener('load', () => {
-      const loader = document.querySelector('.page-loader');
-      setTimeout(() => {
-        loader.classList.add('hidden');
-      }, 500);
-    });
-
-    // Mobile Menu Toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      navLinks.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking a link
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-      });
-    });
-
-    // Header scroll effect
-    const header = document.getElementById('header');
-    let lastScroll = 0;
-
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      
-      if (currentScroll > 100) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-      
-      lastScroll = currentScroll;
-    });
-
-    // Back to Top Button
-    const backToTop = document.getElementById('backToTop');
-
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTop.classList.add('visible');
-      } else {
-        backToTop.classList.remove('visible');
-      }
-    });
-
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Intersection Observer for fade-in animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, observerOptions);
-
-    // Observe all sections and cards
-    document.querySelectorAll('section, .card, .stat-card').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(el);
-    });
-
-    // Add active state to nav links based on scroll position
-    window.addEventListener('scroll', () => {
-      let current = '';
-      const sections = document.querySelectorAll('section[id]');
-      
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - 200)) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('active');
-        }
-      });
-    });
-
-    // Console easter egg for developers
-    console.log('%c👋 Hello Developer!', 'font-size: 20px; color: #ff6b35; font-weight: bold;');
-    console.log('%cInterested in Decision Support Systems and MCDM?', 'font-size: 14px; color: #4a5568;');
-    console.log('%cVisit: https://dsihombing.github.io/decisionlab/', 'font-size: 12px; color: #718096;');
-  </script>
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
