@@ -218,6 +218,38 @@
     .menu-toggle.active span:nth-child(3) {
       transform: rotate(-45deg) translate(6px, -6px);
     }
+/* Language Switcher */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+    padding-left: 2rem;
+}
+
+.lang-btn {
+    color: var(--gray);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    color: var(--orange);
+    background: var(--orange-light);
+}
+
+.lang-btn.active {
+    color: var(--orange);
+    background: var(--orange-light);
+}
+
+.lang-separator {
+    color: var(--border);
+    font-weight: 300;
+}
 
     /* Main */
     main {
