@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Denny J. C. Sihombing – Lecturer & Researcher in Information Systems</title>
-    <meta name="description" content="Information Systems lecturer focusing on Data Science, Decision Support Systems, and Digital Transformation. Teaching and research at Atma Jaya Catholic University.">
+    <meta name="description" content="Information Systems lecturer focusing on Decision Support Systems, Machine Learning, and Socio-Technical Digital Transformation. Open to PhD opportunities.">
     <meta name="author" content="Denny J. C. Sihombing">
     <meta property="og:title" content="Denny J. C. Sihombing – Lecturer & Researcher">
-    <meta property="og:description" content="Academic profile and teaching portfolio of Denny J. C. Sihombing, focusing on Data Science, DSS, and Digital Transformation.">
+    <meta property="og:description" content="Academic profile and teaching portfolio of Denny J. C. Sihombing. Actively seeking PhD opportunities in digital inclusion and socio-technical systems.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dsihombing.github.io/index.html">
     <meta property="og:image" content="https://dsihombing.github.io/denny.png">
@@ -19,20 +19,20 @@
     <style>
         :root {
             /* ─── COLOR PALETTE ─── */
-            --brand-blue: #1e3a8a;       /* Deep Professional Blue */
+            --brand-blue: #1e3a8a;
             --brand-blue-hover: #1e40af;
             --brand-blue-light: #eff6ff;
             
-            --brand-orange: #ea580c;     /* Vibrant Action Orange */
+            --brand-orange: #ea580c;
             --brand-orange-hover: #c2410c;
             --brand-orange-light: #fff7ed;
             
-            --bg-body: #f4f7f9;          /* Very light blue-gray for main background */
-            --bg-surface: #ffffff;       /* Pure white for cards */
+            --bg-body: #f4f7f9;
+            --bg-surface: #ffffff;
             --bg-surface-hover: #f8fafc;
             
-            --text-main: #0f172a;        /* Near black for high contrast */
-            --text-muted: #475569;       /* Slate gray for secondary text */
+            --text-main: #0f172a;
+            --text-muted: #475569;
             --text-faint: #94a3b8;
             
             --border: #e2e8f0;
@@ -247,6 +247,20 @@
             color: var(--text-muted);
             margin-bottom: 28px;
             letter-spacing: 0.01em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .status-badge {
+            background: var(--brand-blue-light);
+            color: var(--brand-blue);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+            border: 1px solid rgba(30, 58, 138, 0.2);
         }
 
         .hero-desc {
@@ -682,7 +696,7 @@
         .research-num {
             font-family: 'DM Serif Display', serif;
             font-size: 48px;
-            color: rgba(30, 58, 138, 0.08); /* Faint blue */
+            color: rgba(30, 58, 138, 0.08);
             line-height: 1;
             margin-bottom: 16px;
             letter-spacing: -0.02em;
@@ -702,34 +716,45 @@
             line-height: 1.75;
         }
 
-        .academic-profiles {
-            margin-top: 24px;
-            padding-top: 16px;
-            border-top: 1px solid var(--border);
+        /* ─── ACADEMIC BANNER (NEW) ─── */
+        .academic-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px 32px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition);
         }
 
-        .academic-profiles-label {
-            font-size: 10px;
+        .academic-banner:hover {
+            border-color: var(--brand-blue);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .academic-banner-text {
+            font-size: 15px;
             font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--text-faint);
-            margin-bottom: 12px;
+            color: var(--brand-blue);
         }
 
         .academic-links {
             display: flex;
-            gap: 8px;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
         .acad-link {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            font-size: 12px;
-            font-weight: 500;
-            padding: 8px 12px;
-            border-radius: 8px;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px 16px;
+            border-radius: 10px;
             border: 1px solid var(--border);
             background: var(--bg-body);
             color: var(--text-muted);
@@ -740,11 +765,21 @@
             border-color: var(--brand-orange);
             color: var(--brand-orange);
             background: var(--brand-orange-light);
+            transform: translateY(-2px);
         }
 
         .acad-link svg {
-            width: 14px;
-            height: 14px;
+            width: 16px;
+            height: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .academic-banner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+                padding: 24px;
+            }
         }
 
         /* ─── RESOURCES ─── */
@@ -1047,14 +1082,12 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Sticky nav on scroll
             const shell = document.querySelector('.nav-shell');
             window.addEventListener('scroll', () => {
                 shell.classList.toggle('scrolled', window.scrollY > 20);
                 updateActiveNav();
             }, { passive: true });
 
-            // Hamburger menu
             const hamburger = document.querySelector('.hamburger');
             const mobileMenu = document.querySelector('.mobile-menu');
             hamburger.addEventListener('click', () => {
@@ -1062,7 +1095,6 @@
                 mobileMenu.classList.toggle('open', isOpen);
             });
 
-            // Close mobile menu on link click
             document.querySelectorAll('.mobile-link').forEach(link => {
                 link.addEventListener('click', () => {
                     hamburger.classList.remove('open');
@@ -1070,7 +1102,6 @@
                 });
             });
 
-            // Scroll spy — highlight active nav link
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.nav-link');
 
@@ -1102,7 +1133,7 @@
             <div class="brand-monogram">DS</div>
             <div class="brand-info">
                 <div class="brand-name">Denny J. C. Sihombing</div>
-                <div class="brand-role">Information Systems · Atma Jaya</div>
+                <div class="brand-role">Information Systems · AJCUI</div>
             </div>
         </a>
         <nav class="nav-links" aria-label="Main navigation">
@@ -1136,14 +1167,16 @@
         <div class="hero-main">
             <div class="hero-eyebrow">
                 <span class="hero-eyebrow-line"></span>
-                Atma Jaya Catholic University
+                Atma Jaya Catholic University of Indonesia
             </div>
             <h1 class="hero-name">Denny J. C.<br><em>Sihombing</em></h1>
-            <p class="hero-role">Lecturer & Researcher · Information Systems</p>
+            <div class="hero-role">
+                Lecturer & Researcher
+                <span class="status-badge">Open to PhD Opportunities</span>
+            </div>
             <p class="hero-desc">
-                Focused on data science, decision support systems, and digital transformation. 
-                Dedicated to shaping future-ready information systems professionals through 
-                research-grounded teaching, managing DSLab-ID, and hands-on mentoring.
+                Focused on data science, decision support systems, and the socio-technical aspects of digital transformation. 
+                Dedicated to shaping future-ready professionals while actively seeking PhD opportunities to investigate digital inclusion in Southeast Asia.
             </p>
             <div class="hero-stats">
                 <div class="stat">
@@ -1160,7 +1193,7 @@
                 </div>
             </div>
             <div class="hero-actions">
-                <a href="#resources" class="btn-primary">Explore DSLab-ID →</a>
+                <a href="#research" class="btn-primary">View Research Focus →</a>
                 <a href="#contact" class="btn-outline">Get in Touch</a>
             </div>
         </div>
@@ -1179,11 +1212,11 @@
                     <div class="profile-title">Information Systems Lecturer, Atma Jaya</div>
                     <div class="profile-divider"></div>
                     <div class="profile-tags">
-                        <span class="ptag primary">Data Science</span>
-                        <span class="ptag primary">DSS</span>
-                        <span class="ptag">Digital Transformation</span>
-                        <span class="ptag">MCDM · AHP · TOPSIS</span>
+                        <span class="ptag primary">Socio-Technical Systems</span>
+                        <span class="ptag primary">Digital Inclusion</span>
                         <span class="ptag">Data Analytics</span>
+                        <span class="ptag">DSS & MCDM</span>
+                        <span class="ptag">Digital Policy</span>
                     </div>
                 </div>
             </div>
@@ -1202,24 +1235,19 @@
             <div class="about-block">
                 <div class="about-block-label">Background</div>
                 <p>
-                    With a strong interest in both technology and pedagogy, my academic focus is centered 
-                    on systems analysis, digital transformation in the business sector, and the effective 
-                    management of information technology projects to support organizational objectives.
+                    With a strong foundation in both technology and pedagogy, my academic focus bridges systems analysis, digital transformation, and the effective management of IT projects. 
                 </p>
                 <p style="margin-top:14px;">
-                    Currently pursuing advanced studies and research in Data Science, I am dedicated to mentoring 
-                    students to become competent professionals fully equipped to navigate the dynamics and 
-                    challenges of today's tech-driven industry.
+                    <strong>I am currently seeking PhD opportunities</strong> to investigate the socio-technical dimensions of digital inclusion. I am particularly interested in how state-led digital initiatives are experienced, adapted, and resisted in fragile infrastructural settings across Southeast Asia.
                 </p>
             </div>
             <div class="about-block">
                 <div class="about-block-label">Focus Areas</div>
                 <ul class="about-list">
+                    <li>Researching the gap between universal digital policy ambitions and ground-level realities.</li>
                     <li>Teaching core courses in Decision Support Systems, IT Project Management, and Digital Transformation.</li>
-                    <li>Researching the application of Data Science in the Indonesian context (specifically agriculture).</li>
                     <li>Managing DSLab-ID, fostering practical skills in Data Science & DSS.</li>
                     <li>Actively supervising undergraduate theses and developing project-based learning materials.</li>
-                    <li>Serving on the editorial board for academic journals focusing on digital innovation.</li>
                 </ul>
             </div>
         </div>
@@ -1289,11 +1317,19 @@
             <span class="section-label-text">Research</span>
         </div>
         <h2 class="section-title" id="research-heading">Research & Publications</h2>
-        <p class="section-sub">Research interests in Data Science, DSS, MCDM, and digital innovation.</p>
+        <p class="section-sub">Exploring the intersections of digital inclusion, socio-technical systems, and data-driven decision making.</p>
 
         <div class="research-grid">
             <article class="research-card">
                 <div class="research-num">01</div>
+                <h3 class="research-title">Digital Inclusion & Policy Realities</h3>
+                <p class="research-text">
+                    PhD research focus: Investigating how state-led digital initiatives (e.g., upskilling schemes under Indonesia's <em>Satu Data</em> framework) are adapted and resisted in fragile infrastructural settings, addressing the gap between policy ambitions and ground-level realities.
+                </p>
+            </article>
+
+            <article class="research-card">
+                <div class="research-num">02</div>
                 <h3 class="research-title">Decision Support Systems & MCDM</h3>
                 <p class="research-text">
                     Development and application of multi-criteria decision making methods — AHP, TOPSIS, 
@@ -1302,38 +1338,11 @@
             </article>
 
             <article class="research-card">
-                <div class="research-num">02</div>
-                <h3 class="research-title">Data Science in Agriculture</h3>
-                <p class="research-text">
-                    PhD research focus: Exploring the application of advanced data science methodologies 
-                    and predictive analytics to optimize agricultural processes and yields within the Indonesian context.
-                </p>
-            </article>
-
-            <article class="research-card">
                 <div class="research-num">03</div>
-                <h3 class="research-title">Digital Innovation & Behavior</h3>
+                <h3 class="research-title">Educational Data Mining & Analytics</h3>
                 <p class="research-text">
-                    Editorial board member for the "Journal of Sustainable Behavior and Digital Innovation", 
-                    exploring the intersection of technological advancement, strategic planning, and societal impact.
+                    Applying predictive modeling, statistical analysis, and data warehouse design to institutional research, focusing on learning analytics and academic performance prediction to support strategic decision-making.
                 </p>
-                <div class="academic-profiles">
-                    <div class="academic-profiles-label">Academic Profiles</div>
-                    <div class="academic-links">
-                        <a href="https://scholar.google.com/citations?user=1s-0eboAAAAJ" target="_blank" rel="noopener" class="acad-link">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.6h3.6v.9C2 12.1 1 13.9 1 16h2a5 5 0 015-5v2l4-3-4-3v2a7 7 0 00-6.4 4.2V9.6H24L12 0z" fill="currentColor"/></svg>
-                            Scholar
-                        </a>
-                        <a href="https://orcid.org/0000-0002-9221-3905" target="_blank" rel="noopener" class="acad-link">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 01-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.37H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.184 0 2.772-1.969 5.184-5.344 5.184h-3.9V7.416zm1.444 1.303v7.765h2.297c2.359 0 3.9-1.435 3.9-3.884 0-2.206-1.275-3.881-3.9-3.881h-2.297z" fill="currentColor"/></svg>
-                            ORCID
-                        </a>
-                        <a href="https://www.researchgate.net/profile/Denny-Sihombing" target="_blank" rel="noopener" class="acad-link">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.586 0H4.414A4.414 4.414 0 000 4.414v15.172A4.414 4.414 0 004.414 24h15.172A4.414 4.414 0 0024 19.586V4.414A4.414 4.414 0 0019.586 0zM11.48 17.647h-1.759V6.353H12.8c1.047 0 1.867.27 2.46.808.592.539.888 1.279.888 2.22 0 .621-.155 1.168-.464 1.64a2.94 2.94 0 01-1.3 1.054l2.486 5.572h-1.927l-2.23-5.185H11.48v5.185zm0-6.512h1.144c.608 0 1.065-.15 1.37-.45.306-.3.459-.736.459-1.308 0-.563-.155-.989-.464-1.278-.31-.289-.775-.433-1.396-.433H11.48v3.469z" fill="currentColor"/></svg>
-                            RG
-                        </a>
-                    </div>
-                </div>
             </article>
         </div>
     </section>
@@ -1373,23 +1382,41 @@
     <section id="contact" class="section" aria-labelledby="contact-heading">
         <div class="section-label">
             <span class="section-label-line"></span>
-            <span class="section-label-text">Contact</span>
+            <span class="section-label-text">Contact & Profiles</span>
         </div>
         <h2 class="section-title" id="contact-heading">Get in Touch</h2>
+        <p class="section-sub">Connect with me for academic discussions and collaborations.</p>
+
+        <div class="academic-banner">
+            <div class="academic-banner-text">Explore my research profiles & publications:</div>
+            <div class="academic-links">
+                <a href="https://scholar.google.com/citations?user=1s-0eboAAAAJ" target="_blank" rel="noopener" class="acad-link">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.6h3.6v.9C2 12.1 1 13.9 1 16h2a5 5 0 015-5v2l4-3-4-3v2a7 7 0 00-6.4 4.2V9.6H24L12 0z" fill="currentColor"/></svg>
+                    Google Scholar
+                </a>
+                <a href="https://orcid.org/0000-0002-9221-3905" target="_blank" rel="noopener" class="acad-link">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 01-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.37H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.184 0 2.772-1.969 5.184-5.344 5.184h-3.9V7.416zm1.444 1.303v7.765h2.297c2.359 0 3.9-1.435 3.9-3.884 0-2.206-1.275-3.881-3.9-3.881h-2.297z" fill="currentColor"/></svg>
+                    ORCID
+                </a>
+                <a href="https://www.researchgate.net/profile/Denny-Sihombing" target="_blank" rel="noopener" class="acad-link">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.586 0H4.414A4.414 4.414 0 000 4.414v15.172A4.414 4.414 0 004.414 24h15.172A4.414 4.414 0 0024 19.586V4.414A4.414 4.414 0 0019.586 0zM11.48 17.647h-1.759V6.353H12.8c1.047 0 1.867.27 2.46.808.592.539.888 1.279.888 2.22 0 .621-.155 1.168-.464 1.64a2.94 2.94 0 01-1.3 1.054l2.486 5.572h-1.927l-2.23-5.185H11.48v5.185zm0-6.512h1.144c.608 0 1.065-.15 1.37-.45.306-.3.459-.736.459-1.308 0-.563-.155-.989-.464-1.278-.31-.289-.775-.433-1.396-.433H11.48v3.469z" fill="currentColor"/></svg>
+                    ResearchGate
+                </a>
+            </div>
+        </div>
 
         <div class="contact-section">
             <div class="contact-left">
                 <h3 class="contact-title">Open to Collaboration</h3>
                 <p class="contact-desc">
-                    Available for collaboration on teaching, research projects, thesis supervision, and 
-                    guest lectures in data science, decision support systems, and digital transformation.
+                    Available for discussions regarding PhD opportunities, applied research, thesis supervision, and 
+                    guest lectures in socio-technical systems, digital transformation, and decision support.
                 </p>
                 <div class="contact-chips">
-                    <span class="chip">Teaching & curriculum</span>
+                    <span class="chip">PhD Opportunities</span>
                     <span class="chip">Applied research</span>
-                    <span class="chip">Thesis supervision</span>
+                    <span class="chip">Teaching & curriculum</span>
                     <span class="chip">Guest lectures</span>
-                    <span class="chip">Workshops</span>
                 </div>
             </div>
             <div class="contact-right">
